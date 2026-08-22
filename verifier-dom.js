@@ -376,9 +376,17 @@ function main() {
   console.log("Mode mutations du code produit, " + MUTATIONS.length + " mutations dont "
     + MUTATIONS.filter((m) => m.inerte).length + " temoin inerte.\n");
   let rates = 0;
+  /* LECON 21, payee une TROISIEME fois dans cette maison, et cette fois elle rendait
+     QUATRE mutations INERTES sans que personne ne le reprenne : le gabarit est stocke en
+     CRLF, et tout motif de mutation ecrit avec un "\n" ne trouve alors rien. Les mutations
+     d'une seule ligne marchaient, les multi-lignes etaient muettes, et le harnais annoncait
+     donc quatre preuves qu'il n'avait jamais faites. On normalise le gabarit en LF AVANT
+     d'appliquer les motifs, une bonne fois pour toute la classe de defaut, au lieu de
+     reparer les motifs un par un en attendant le cinquieme. */
+  const gabaritLF = gabarit.replace(/\r\n/g, "\n");
   MUTATIONS.forEach((m, i) => {
-    const mute = m.muter(gabarit);
-    if (mute === gabarit) {
+    const mute = m.muter(gabaritLF);
+    if (mute === gabaritLF) {
       console.error("  [" + (i + 1) + "] MUTATION SANS EFFET, elle ne prouve rien : " + m.nom);
       rates++;
       return;

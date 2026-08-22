@@ -64,6 +64,9 @@ a{color:var(--green-deep)}
 .bandeau a.retour{color:#fff; background:var(--green-deep); text-decoration:none; border-radius:999px;
   padding:9px 18px; font-weight:600; font-size:13px; min-height:40px; display:inline-flex; align-items:center}
 .bandeau a.retour:hover{background:var(--green-hover)}
+.bandeau .actions-bandeau{display:flex; gap:8px; align-items:center; flex:0 0 auto}
+.bandeau a.offre{background:transparent; border:1px solid rgba(255,255,255,.32); color:#fff}
+.bandeau a.offre:hover{background:rgba(255,255,255,.10); border-color:rgba(255,255,255,.5)}
 
 .coquille{display:flex; min-height:calc(100vh - 38px)}
 .flanc{width:236px; flex:0 0 236px; background:var(--bg-dark); color:#fff;
@@ -256,7 +259,10 @@ a{color:var(--green-deep)}
 <div class="bandeau" role="region" aria-label="A propos de cette demonstration">
   <span class="pastille">Demonstration</span>
   <span class="txt" id="texte-bandeau">Entreprise et emails fictifs. Aucune connexion a votre boite, aucun compte a creer. Les analyses affichees ont ete produites a l'avance pour cette demonstration.</span>
-  <a class="retour" id="lien-retour" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Parler a un humain</a>
+  <span class="actions-bandeau">
+    <a class="retour" id="lien-retour" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Parler a un humain</a>
+    <a class="retour offre" id="lien-offre" href="https://thibaudlepan77-svg.github.io/bataxal/">Voir les prix</a>
+  </span>
 </div>
 
 <div class="barre-haute">
@@ -386,6 +392,7 @@ a{color:var(--green-deep)}
         <p>Un patron de PME ne veut pas trier, il veut que chaque email atterrisse chez la bonne personne sans passer par lui. Les regles font ce travail la nuit, le briefing du matin dit ce qui reste vraiment pour lui.</p>
         <div class="actions">
           <a class="btn btn-primaire" id="lien-retour-2" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Voir ce que cela donne sur ma boite</a>
+          <a class="btn btn-secondaire" id="lien-offre-2" href="https://thibaudlepan77-svg.github.io/bataxal/">Voir les prix et les formules</a>
         </div>
       </div>
     </section>

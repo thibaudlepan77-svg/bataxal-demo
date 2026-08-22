@@ -105,6 +105,29 @@ async function main() {
     }
   }
 
+  /* --- 7. Le chemin vers l'OFFRE doit mener quelque part EN LIGNE --- */
+  /* Ajoute le 2026-08-22, jour ou la demonstration a cesse d'etre un cul-de-sac tarifaire.
+     Un lien mort vers la page de prix est invisible ici : la demonstration continue de
+     fonctionner parfaitement, et seul le prospect qui voulait connaitre le prix tombe sur
+     un 404. C'est exactement la lecon 37, une adresse ne se suppose pas, elle se mesure a
+     chaque passage, parce qu'elle est deja partie dans des messages. */
+  const offre = (servi.match(/id="lien-offre" href="([^"]*)"/) || [, ""])[1];
+  ok(/^https:\/\//.test(offre), "Le chemin vers l'offre servi doit etre une adresse absolue (obtenu " + offre + ")");
+  if (/^https:\/\//.test(offre)) {
+    try {
+      const ro = await fetch(offre);
+      egal(ro.status, 200, "La page d'offre doit repondre 200 : " + offre);
+      const corpsOffre = await ro.text();
+      /* Repondre 200 ne suffit pas : GitHub Pages sert une page d'erreur en 404, et un
+         depot renomme peut rendre 200 sur tout autre chose. On exige que ce qui repond
+         soit bien une page de PRIX, sinon le bouton « Voir les prix » ment. */
+      ok(/Prix public/.test(corpsOffre), "L'adresse de l'offre doit servir la page de prix, pas autre chose");
+      ok(/FCFA/.test(corpsOffre), "La page d'offre servie doit porter un montant");
+    } catch (e) {
+      echecs.push("La page d'offre ne repond pas : " + offre + " (" + e.message + ")");
+    }
+  }
+
   conclure(rouge, cible);
 }
 

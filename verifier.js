@@ -249,6 +249,49 @@ function controler(donnees, gabarit, demo) {
       "Le chemin de retour " + m[1] + " doit porter une classe de bouton, pas etre un lien inline");
   });
 
+  /* --- 7 ter. Chemin vers l'OFFRE, ajoute le 2026-08-22 ---------- */
+  /* Cette demonstration est le lien qui circule reellement sur WhatsApp. Jusqu'ici, un
+     prospect convaincu pouvait parler a un humain mais ne pouvait PAS savoir combien
+     cela coute : la page de prix existait et rien n'y menait. Le chemin se verifie
+     NOMMEMENT, comme le chemin de retour, et pour la meme raison (lecon 40, ce qui porte
+     la decision ne se laisse pas a un balayage general). */
+  const URL_OFFRE = "https://thibaudlepan77-svg.github.io/bataxal/";
+  const liensOffre = [...gabarit.matchAll(/id="(lien-offre[^"]*)"[^>]*href="([^"]+)"/g)]
+    .concat([...gabarit.matchAll(/href="([^"]+)"[^>]*id="(lien-offre[^"]*)"/g)].map((m) => [m[0], m[2], m[1]]));
+  ok(liensOffre.length >= 2, "Il faut au moins deux chemins vers l'offre (obtenu " + liensOffre.length + ")");
+  liensOffre.forEach((m) => {
+    egal(m[2], URL_OFFRE, "Le chemin vers l'offre " + m[1] + " doit pointer vers l'adresse propre de la page de prix");
+    /* Adresse ABSOLUE, jamais relative : l'offre et la demonstration vivent dans deux
+       depots distincts, un lien relatif changerait de destination sans rien casser. */
+    ok(/^https:\/\//.test(m[2]), "Le chemin vers l'offre " + m[1] + " doit etre une adresse absolue");
+    const balise = (gabarit.match(new RegExp('<a[^>]*id="' + m[1] + '"[^>]*>')) || [""])[0];
+    ok(/class="[^"]*\bbtn\b/.test(balise) || /class="[^"]*\bretour\b/.test(balise),
+      "Le chemin vers l'offre " + m[1] + " doit porter une classe de bouton, pas etre un lien inline");
+  });
+  /* La demonstration ne porte toujours AUCUN TARIF : elle montre le produit, la page
+     d'offre porte le prix. Un tarif recopie ici serait une deuxieme verite a maintenir,
+     et le jour ou la grille bouge, la demonstration mentirait sans que rien ne bouge.
+     Attention a la formulation du controle : la demonstration est PLEINE de montants en
+     FCFA, ce sont les factures et les commandes des emails fictifs. Interdire tout montant
+     serait un faux rouge, et un faux rouge finit toujours par etre desactive (lecon 28).
+     Deuxieme tentative trop large egalement : interdire « par mois » rougissait sur un
+     email de demarchage FICTIF qui vend du referencement « a 29 euros par mois ». La
+     bonne formulation ne decrit pas la forme d'un tarif, elle nomme LE NOTRE : aucun des
+     montants de notre grille publique ne doit apparaitre ici. Ces montants sont publics,
+     ils sont sur la page d'offre, seule la methode de chiffrage reste privee. */
+  const MONTANTS_DE_L_OFFRE = [36000, 51000, 71000, 100000];
+  const nbsp = String.fromCharCode(160);
+  const dupliques = MONTANTS_DE_L_OFFRE.filter((n) => {
+    const formes = [
+      String(n).replace(/\B(?=(\d{3})+(?!\d))/g, " "),
+      String(n).replace(/\B(?=(\d{3})+(?!\d))/g, nbsp),
+      String(n)
+    ];
+    return formes.some((f) => demo.indexOf(f + " FCFA") !== -1 || demo.indexOf(f + nbsp + "FCFA") !== -1);
+  });
+  ok(dupliques.length === 0,
+    "La demonstration recopie un montant de la grille publique (" + dupliques.join(", ") + "). Le prix vit sur la page d'offre, une seule fois.");
+
   /* --- 7 bis. Carte d'apercu du lien partage --------------------- */
   /* Ce lien se colle d'abord dans WhatsApp. Sans carte d'apercu il arrive en URL nue,
      ce qui ressemble a du spam, et le prospect ne clique pas : la meilleure demonstration
@@ -393,6 +436,26 @@ const MUTATIONS = [
     muterSource: (g) => g.replace(
       'content="https://thibaudlepan77-svg.github.io/bataxal-demo/apercu.png"', 'content="apercu.png"')
   },
+  /* Les trois mutations suivantes gardent le chemin vers l'OFFRE, ajoute le 2026-08-22.
+     Sans elles, le lien pourrait mourir, devenir relatif ou se noyer dans une phrase sans
+     qu'aucun controle ne bouge, exactement ce qui est arrive au chemin de retour. */
+  {
+    nom: "Le chemin vers l'offre devient une ancre morte",
+    muterSource: (g) => g.replace(/id="lien-offre" href="[^"]+"/, 'id="lien-offre" href="#"')
+  },
+  {
+    nom: "Le chemin vers l'offre devient relatif, donc change de destination au moindre deplacement",
+    muterSource: (g) => g.replace(/id="lien-offre" href="[^"]+"/, 'id="lien-offre" href="../bataxal/"')
+  },
+  {
+    nom: "Le chemin vers l'offre se noie en lien inline au fil d'une phrase (lecon 40)",
+    muterSource: (g) => g.replace('class="retour offre" id="lien-offre"', 'class="discret" id="lien-offre"')
+  },
+  {
+    nom: "La grille de prix est recopiee dans la demonstration, deuxieme verite a maintenir",
+    muterSource: (g) => g.replace("<span class=\"pastille\">Demonstration</span>",
+      "<span class=\"pastille\">Demonstration</span><span class=\"txt\">51 000 FCFA par mois</span>")
+  },
   {
     nom: "og:url pointe vers un AUTRE artefact de la maison",
     muterSource: (g) => g.replace(
@@ -429,7 +492,12 @@ const MUTATIONS = [
   },
   {
     nom: "Les boutons descendent sous la cible tactile de 40px",
-    muterSource: (g) => g.replace(".btn{border:0; border-radius:999px; padding:10px 20px; font-size:13.5px; font-weight:600;\n  min-height:40px;", ".btn{border:0; border-radius:999px; padding:10px 20px; font-size:13.5px; font-weight:600;\n  min-height:28px;")
+    /* LECON 21, payee une seconde fois dans ce depot meme. Ce motif etait ecrit avec un
+       "\n" alors que le gabarit est stocke en CRLF : il ne trouvait donc RIEN, la mutation
+       etait INERTE, et le harnais la signalait sans que le cycle precedent en tienne
+       compte. Toute mutation multi-lignes de ce fichier passe desormais par une expression
+       reguliere qui accepte les deux fins de ligne. */
+    muterSource: (g) => g.replace(/(\.btn\{border:0;[^}]*?)min-height:40px;/, "$1min-height:28px;")
   },
   {
     nom: "Le vert de marque derive vers une autre teinte",
