@@ -13,6 +13,7 @@
  *                                            de la maison, il doit echouer)
  */
 const fs = require("fs");
+const { sansAccent } = require("./accents.js");
 const path = require("path");
 
 const RACINE = __dirname;
@@ -82,7 +83,7 @@ async function main() {
     ok(servi.toLowerCase().indexOf(interdit.toLowerCase()) === -1,
       "Ce qui est SERVI au prospect contient une chaine interdite : " + interdit);
   });
-  ok(/deploye en production/i.test(servi),
+  ok(/deploye en production/i.test(sansAccent(servi)),
     "Ce qui est SERVI au prospect doit porter l'affirmation verifiable de production");
 
   /* --- 6. La carte d'apercu du lien doit exister EN LIGNE --------- */
