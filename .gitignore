@@ -1,0 +1,7 @@
+node_modules/
+.playwright-mcp/
+.serveur-mesure.js
+captures/
+data/interdits.local.json
+CADRAGE.md
+REVUE-NAVIGATEUR.md

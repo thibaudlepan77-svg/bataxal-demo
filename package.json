@@ -1,0 +1,22 @@
+{
+  "name": "bataxal-demo",
+  "version": "1.0.0",
+  "description": "Demonstration publique un clic de BATAXAL, boite mail triee par IA pour PME. Donnees fictives, aucun compte.",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "construire": "node construire.js",
+    "test": "node construire.js --verifier && node carte-apercu.js --verifier && node verifier.js && node verifier.js --rouge && node verifier-dom.js && node verifier-dom.js --rouge",
+    "publication": "node verifier-publication.js",
+    "publication:rouge": "node verifier-publication.js --rouge",
+    "carte": "node carte-apercu.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "jsdom": "^30.0.1"
+  },
+  "private": true
+}

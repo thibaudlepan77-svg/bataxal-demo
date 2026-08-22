@@ -1,0 +1,901 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bataxal, demonstration : votre boite mail triee par l'IA</title>
+<meta name="description" content="Demonstration publique de Bataxal. 24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses proposees. Aucun compte, aucune connexion a votre boite.">
+<!-- Carte d'apercu. Ce lien se partage d'abord sur WhatsApp : sans ces balises il se colle
+     en URL nue, ce qui ressemble a du spam et fait perdre le clic avant la demonstration. -->
+<link rel="canonical" href="https://thibaudlepan77-svg.github.io/bataxal-demo/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://thibaudlepan77-svg.github.io/bataxal-demo/">
+<meta property="og:site_name" content="Jaayleer">
+<meta property="og:locale" content="fr_SN">
+<meta property="og:title" content="Bataxal : votre boite mail triee par l'IA, en une minute">
+<meta property="og:description" content="24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses deja redigees. Demonstration a ouvrir sans compte.">
+<meta property="og:image" content="https://thibaudlepan77-svg.github.io/bataxal-demo/apercu.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bataxal, la boite du jour triee : 3 urgents, 5 importants, 16 qui ne demandent rien.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bataxal : votre boite mail triee par l'IA, en une minute">
+<meta name="twitter:description" content="24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses deja redigees. Demonstration a ouvrir sans compte.">
+<meta name="twitter:image" content="https://thibaudlepan77-svg.github.io/bataxal-demo/apercu.png">
+<style>
+:root{
+  --green-deep:#0E8B5A; --green-hover:#0A7A4D; --green-tint:rgba(14,139,90,.10);
+  --whatsapp-green:#25D366;
+  --bg-cream:#F7F5F0; --bg-card:#FFFFFF; --bg-card-read:#FBFAF7; --bg-inset:#F1EEE8; --bg-dark:#17171B;
+  --fg-primary:#191A1D; --fg-body:#4A4B52; --fg-muted:#6E6F78; --fg-soft:#9A9BA3;
+  --p1:#D6453A; --p1-bg:rgba(214,69,58,.10);
+  --p2:#DE8A1F; --p2-bg:rgba(222,138,31,.12);
+  --p3:#6E6F78; --p3-bg:rgba(110,111,120,.10);
+  --p4:#ADAEB5; --p4-bg:rgba(173,174,181,.10);
+  --line:rgba(25,26,29,.07); --line-strong:rgba(25,26,29,.12);
+  --radius-sm:10px; --radius-md:14px; --radius-lg:20px;
+  --shadow-1:0 1px 2px rgba(25,26,29,.04), 0 1px 1px rgba(25,26,29,.03);
+  --shadow-2:0 4px 12px rgba(25,26,29,.07), 0 2px 4px rgba(25,26,29,.04);
+  --ease:cubic-bezier(0.2, 0, 0, 1);
+  --sans:"Manrope","Segoe UI",system-ui,-apple-system,"Helvetica Neue",Arial,sans-serif;
+  --display:"Space Grotesk","Manrope","Segoe UI",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+[hidden]{display:none !important}
+html,body{margin:0;padding:0}
+body{background:var(--bg-cream); color:var(--fg-body); font-family:var(--sans);
+  font-size:13.5px; line-height:20px; -webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--display); color:var(--fg-primary); margin:0; letter-spacing:-.3px}
+h1{font-size:24px; line-height:30px; font-weight:700}
+h2{font-size:16px; line-height:22px; font-weight:600}
+h3{font-size:14px; line-height:20px; font-weight:600}
+p{margin:0}
+button{font-family:inherit; font-size:inherit; cursor:pointer}
+a{color:var(--green-deep)}
+:focus-visible{outline:none; box-shadow:0 0 0 2px #fff, 0 0 0 4px rgba(14,139,90,.55)}
+.tabnum{font-variant-numeric:tabular-nums}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+
+.bandeau{background:var(--bg-dark); color:#fff; padding:10px 16px; display:flex; gap:10px 14px;
+  align-items:center; flex-wrap:wrap; justify-content:center; font-size:12.5px; line-height:18px}
+.bandeau .pastille{background:rgba(14,139,90,.25); color:#7BE0AE; border-radius:999px;
+  padding:2px 10px; font-size:11px; font-weight:700; letter-spacing:.4px; text-transform:uppercase}
+.bandeau .txt{color:#D6D7DE}
+.bandeau a.retour{color:#fff; background:var(--green-deep); text-decoration:none; border-radius:999px;
+  padding:9px 18px; font-weight:600; font-size:13px; min-height:40px; display:inline-flex; align-items:center}
+.bandeau a.retour:hover{background:var(--green-hover)}
+
+.coquille{display:flex; min-height:calc(100vh - 38px)}
+.flanc{width:236px; flex:0 0 236px; background:var(--bg-dark); color:#fff;
+  padding:20px 14px; display:flex; flex-direction:column; gap:22px}
+.marque{display:flex; align-items:center; gap:10px; padding:0 8px}
+.marque .logo{width:32px;height:32px;border-radius:9px;background:var(--green-deep);
+  display:grid;place-items:center;font-family:var(--display);font-weight:700;color:#fff;font-size:16px}
+.marque .nom{font-family:var(--display);font-weight:700;font-size:17px;letter-spacing:-.3px;color:#fff}
+.marque .org{font-size:11.5px;color:#9A9BA3;line-height:14px}
+.menu{display:flex; flex-direction:column; gap:2px}
+.menu button{display:flex; align-items:center; gap:10px; width:100%; text-align:left;
+  background:transparent; border:0; color:#C9CAD1; padding:10px 12px; border-radius:var(--radius-sm);
+  font-size:13.5px; font-weight:500; min-height:40px; transition:background-color 120ms var(--ease)}
+.menu button:hover{background:rgba(255,255,255,.06); color:#fff}
+.menu button[aria-current="page"]{background:var(--green-deep); color:#fff; font-weight:600}
+.menu .cpt{margin-left:auto; font-size:11px; font-weight:700; color:#9A9BA3}
+.menu button[aria-current="page"] .cpt{color:#fff}
+.flanc .pied{margin-top:auto; font-size:11.5px; line-height:16px; color:#8A8B93; padding:0 8px}
+
+.principal{flex:1; min-width:0; padding:24px 28px 72px}
+.entete{display:flex; align-items:flex-start; gap:16px; flex-wrap:wrap; margin-bottom:16px}
+.entete .titres{min-width:0; flex:1}
+.entete .sous{color:var(--fg-muted); font-size:13px; margin-top:4px}
+
+.btn{border:0; border-radius:999px; padding:10px 20px; font-size:13.5px; font-weight:600;
+  min-height:40px; display:inline-flex; align-items:center; gap:8px; justify-content:center;
+  transition:background-color 120ms var(--ease), box-shadow 120ms var(--ease), transform 120ms var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn-primaire{background:var(--green-deep); color:#fff}
+.btn-primaire:hover{background:var(--green-hover)}
+.btn-secondaire{background:#fff; color:var(--fg-primary); border:1px solid var(--line-strong)}
+.btn-secondaire:hover{background:var(--bg-inset)}
+.btn-whatsapp{background:var(--whatsapp-green); color:#fff}
+.btn-whatsapp:hover{background:#1FB857}
+.btn:disabled{opacity:.5; cursor:not-allowed}
+
+.bascule{display:inline-flex; background:var(--bg-inset); border-radius:999px; padding:3px; gap:2px}
+.bascule button{border:0; background:transparent; color:var(--fg-muted); font-weight:600; font-size:13px;
+  border-radius:999px; padding:8px 16px; min-height:40px; transition:background-color 120ms var(--ease)}
+.bascule button[aria-pressed="true"]{background:var(--fg-primary); color:#fff}
+
+.chiffres{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-bottom:18px}
+.chiffre{background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:14px 16px; box-shadow:var(--shadow-1)}
+.chiffre .val{font-family:var(--display); font-size:26px; line-height:30px; font-weight:700; color:var(--fg-primary)}
+.chiffre .lib{font-size:12.5px; color:var(--fg-muted); margin-top:2px}
+.chiffre.accent .val{color:var(--p1)}
+
+.onglets{display:flex; gap:6px; overflow-x:auto; padding:2px 0 12px}
+.onglet{background:transparent; border:0; color:var(--fg-muted); border-radius:999px;
+  padding:8px 14px; font-size:13px; font-weight:600; white-space:nowrap; min-height:40px;
+  display:inline-flex; align-items:center; gap:7px; transition:background-color 120ms var(--ease)}
+.onglet:hover{background:rgba(25,26,29,.05)}
+.onglet[aria-selected="true"]{background:var(--fg-primary); color:#fff}
+.onglet .pastille-cpt{font-size:11px; font-weight:700; border-radius:999px; padding:1px 7px;
+  background:rgba(25,26,29,.07); color:var(--fg-muted)}
+.onglet[aria-selected="true"] .pastille-cpt{background:rgba(255,255,255,.18); color:#fff}
+.onglet .pastille-cpt.vide{color:var(--fg-soft)}
+
+.prioritaires{margin:0 0 18px}
+.prioritaires h2{margin-bottom:10px}
+.grille-prio{display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:10px}
+.carte-prio{background:var(--bg-card); border:1px solid var(--line); border-left:3px solid var(--p1);
+  border-radius:var(--radius-md); padding:12px 14px; box-shadow:var(--shadow-1); text-align:left;
+  width:100%; transition:box-shadow 120ms var(--ease)}
+.carte-prio:hover{box-shadow:var(--shadow-2)}
+.carte-prio.niveau-2{border-left-color:var(--p2)}
+.carte-prio .de{font-size:12.5px; font-weight:600; color:var(--fg-muted)}
+.carte-prio .sujet-prio{font-size:13.5px; font-weight:600; color:var(--fg-primary); margin-top:2px}
+.carte-prio .quoi{font-size:12.5px; color:var(--fg-body); margin-top:6px}
+
+.liste{display:flex; flex-direction:column; gap:8px}
+.ligne{display:flex; gap:12px; width:100%; text-align:left; background:var(--bg-card);
+  border:1px solid var(--line); border-radius:var(--radius-md); padding:12px 14px;
+  box-shadow:var(--shadow-1); transition:box-shadow 120ms var(--ease), border-color 120ms var(--ease)}
+.ligne:hover{box-shadow:var(--shadow-2); border-color:rgba(14,139,90,.2)}
+.ligne.lu{background:var(--bg-card-read)}
+.avatar{width:36px;height:36px;flex:0 0 36px;border-radius:999px;display:grid;place-items:center;
+  color:#fff;font-size:12.5px;font-weight:700}
+.corps{flex:1; min-width:0}
+.rang1{display:flex; align-items:baseline; gap:8px}
+.rang1 .expediteur{font-size:13px; font-weight:600; color:var(--fg-primary);
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.rang1 .heure{margin-left:auto; font-size:12.5px; color:var(--fg-soft); font-weight:500; white-space:nowrap}
+.point{width:6px;height:6px;border-radius:999px;background:var(--green-deep);flex:0 0 6px;display:inline-block}
+.sujet{font-size:14.5px; line-height:20px; font-weight:600; color:var(--fg-primary); margin-top:2px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.ligne.lu .sujet{font-weight:500}
+.resume{font-size:13px; line-height:19px; color:var(--fg-muted); margin-top:3px;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+.badges{display:flex; gap:6px; flex-wrap:wrap; margin-top:8px}
+.badge{height:20px; border-radius:999px; padding:0 10px; font-size:11px; font-weight:700;
+  letter-spacing:.4px; display:inline-flex; align-items:center; border:0}
+.badge-1{background:var(--p1-bg); color:#B22F25}
+.badge-2{background:var(--p2-bg); color:#8F5606}
+.badge-3{background:var(--p3-bg); color:var(--p3)}
+.badge-4{background:var(--p4-bg); color:#71727B}
+.badge-theme{background:var(--green-tint); color:var(--green-hover)}
+.badge-etat{background:rgba(222,138,31,.12); color:#8F5606}
+.badge-repondu{background:var(--green-tint); color:var(--green-hover)}
+.badge-pj{background:rgba(25,26,29,.06); color:#5C5D65}
+
+.vide{background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:32px 24px; text-align:center; display:flex; flex-direction:column; align-items:center; gap:10px}
+.vide .rond{width:56px;height:56px;border-radius:999px;background:var(--green-tint);
+  display:grid;place-items:center;color:var(--green-deep);font-size:24px;font-weight:700;font-family:var(--display)}
+.vide p{color:var(--fg-muted); max-width:46ch}
+
+.carte{background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-lg);
+  padding:20px; box-shadow:var(--shadow-1); margin-bottom:14px}
+.encart{background:var(--bg-inset); border-radius:var(--radius-md); padding:14px 16px}
+.encart h3{margin-bottom:6px}
+.fiche{display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:10px; margin-top:12px}
+.fiche .item .k{font-size:11px; font-weight:700; letter-spacing:.4px; color:var(--fg-muted); text-transform:uppercase}
+.fiche .item .v{font-size:13.5px; font-weight:600; color:var(--fg-primary); margin-top:2px}
+.texte-email{white-space:pre-wrap; font-size:13.5px; line-height:21px; color:var(--fg-body); margin-top:12px}
+
+.reponses{display:flex; flex-direction:column; gap:10px; margin-top:12px}
+.reponse{background:#fff; border:1px solid var(--line-strong); border-radius:var(--radius-md);
+  padding:12px 14px; text-align:left; width:100%; transition:border-color 120ms var(--ease), box-shadow 120ms var(--ease)}
+.reponse:hover{border-color:var(--green-deep); box-shadow:var(--shadow-2)}
+.reponse[aria-pressed="true"]{border-color:var(--green-deep); background:var(--green-tint)}
+.reponse .ton{font-size:11px; font-weight:700; letter-spacing:.4px; text-transform:uppercase; color:var(--green-hover)}
+.reponse .apercu{font-size:13px; line-height:19px; color:var(--fg-body); margin-top:4px}
+.zone-envoi{margin-top:14px}
+.zone-envoi textarea{width:100%; min-height:150px; border:1px solid var(--line-strong);
+  border-radius:var(--radius-sm); padding:12px 14px; font-family:inherit; font-size:13.5px;
+  line-height:21px; color:var(--fg-body); background:#fff; resize:vertical}
+.zone-envoi textarea:focus{outline:none; border-color:var(--green-deep); box-shadow:0 0 0 3px rgba(14,139,90,.15)}
+.actions{display:flex; gap:8px; flex-wrap:wrap; margin-top:12px}
+.confirmation{margin-top:12px; background:var(--green-tint); color:var(--green-hover);
+  border-radius:var(--radius-md); padding:12px 14px; font-weight:600; font-size:13px}
+
+.briefing{max-width:420px; background:#0B141A; border-radius:20px; padding:14px; box-shadow:var(--shadow-2)}
+.bulle{background:#1F2C33; color:#E9EDEF; border-radius:14px; padding:12px 14px; font-size:13.5px;
+  line-height:21px; white-space:pre-wrap}
+.bulle .exp{color:#7BE0AE; font-weight:700; font-size:12px; display:block; margin-bottom:6px}
+.bulle .horo{color:#8696A0; font-size:11px; text-align:right; display:block; margin-top:8px}
+
+.regle{background:var(--bg-card); border:1px solid var(--line); border-radius:var(--radius-md);
+  padding:14px 16px; box-shadow:var(--shadow-1); margin-bottom:10px}
+.regle .nom{font-weight:600; color:var(--fg-primary); font-size:14px}
+.regle .cond{font-size:13px; color:var(--fg-muted); margin-top:6px}
+.regle .cond b{color:var(--fg-body); font-weight:600}
+
+.finir{background:var(--bg-dark); color:#fff; border-radius:var(--radius-lg); padding:24px; margin-top:20px}
+.finir h2{color:#fff; margin-bottom:8px}
+.finir p{color:#C9CAD1; max-width:62ch}
+.finir .actions{margin-top:16px}
+.finir a.btn{text-decoration:none}
+
+.mobile-nav{display:none}
+@media (max-width:1023px){
+  .flanc{display:none}
+  .principal{padding:16px 14px calc(76px + env(safe-area-inset-bottom))}
+  /* Sur telephone, tout ce qui precede le premier email est du hors-sujet paye au
+     prix fort : mesure au navigateur, la premiere ligne tombait a 1046px, soit plus
+     d'un ecran de defilement avant de voir le produit. Le bandeau reste complet
+     (les trois mentions d'honnetete ne se negocient pas), il se compacte. */
+  .bandeau{padding:8px 12px; font-size:11.5px; line-height:16px; gap:6px 10px}
+  .bandeau .pastille{font-size:10px; padding:1px 8px}
+  .bandeau a.retour{padding:8px 14px; font-size:12.5px}
+  .entete{gap:10px; margin-bottom:12px}
+  .entete .titres{flex:1 1 100%}
+  .entete .sous{font-size:12.5px; line-height:18px}
+  .bascule{width:100%}
+  .bascule button{flex:1}
+  .chiffres{grid-template-columns:1fr 1fr; gap:8px; margin-bottom:12px}
+  .chiffre{padding:10px 12px; border-radius:var(--radius-md)}
+  .chiffre .val{font-size:21px; line-height:25px}
+  .chiffre .lib{font-size:11.5px; line-height:16px}
+  .onglets{padding:0 0 8px}
+  .prioritaires{margin-bottom:12px}
+  .carte-prio{padding:10px 12px}
+  .barre-haute{background:var(--bg-dark); color:#fff; padding:12px 14px; display:flex;
+    align-items:center; gap:10px}
+  .mobile-nav{display:flex; position:fixed; left:0; right:0; bottom:0; background:#fff;
+    border-top:1px solid var(--line-strong); padding-bottom:env(safe-area-inset-bottom); z-index:10}
+  .mobile-nav button{flex:1; border:0; background:transparent; color:var(--fg-muted);
+    font-size:11.5px; font-weight:600; min-height:56px; padding:8px 4px}
+  .mobile-nav button[aria-current="page"]{color:var(--green-deep)}
+  h1{font-size:20px; line-height:26px}
+}
+@media (min-width:1024px){ .barre-haute{display:none} }
+@media (prefers-reduced-motion: reduce){ *{transition-duration:0ms !important; animation-duration:0ms !important} }
+</style>
+</head>
+<body>
+
+<div class="bandeau" role="region" aria-label="A propos de cette demonstration">
+  <span class="pastille">Demonstration</span>
+  <span class="txt" id="texte-bandeau">Entreprise et emails fictifs. Aucune connexion a votre boite, aucun compte a creer. Les analyses affichees ont ete produites a l'avance pour cette demonstration.</span>
+  <a class="retour" id="lien-retour" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Parler a un humain</a>
+</div>
+
+<div class="barre-haute">
+  <div class="marque">
+    <div class="logo" aria-hidden="true">B</div>
+    <div>
+      <div class="nom">Bataxal</div>
+      <div class="org" id="org-mobile"></div>
+    </div>
+  </div>
+</div>
+
+<div class="coquille">
+  <nav class="flanc" aria-label="Navigation principale">
+    <div class="marque">
+      <div class="logo" aria-hidden="true">B</div>
+      <div>
+        <div class="nom">Bataxal</div>
+        <div class="org" id="org-bureau"></div>
+      </div>
+    </div>
+    <div class="menu" id="menu-bureau"></div>
+    <div class="pied">
+      Demonstration a donnees fictives.<br>Le produit reel est deploye en production.
+    </div>
+  </nav>
+
+  <main class="principal" id="principal">
+    <!-- VUE BOITE -->
+    <section id="vue-boite">
+      <div class="entete">
+        <div class="titres">
+          <h1 id="titre-boite">Boite du jour</h1>
+          <p class="sous" id="sous-boite"></p>
+        </div>
+        <div class="bascule" role="group" aria-label="Comparer avant et apres">
+          <button type="button" id="bascule-sans" aria-pressed="false">Sans Bataxal</button>
+          <button type="button" id="bascule-avec" aria-pressed="true">Avec Bataxal</button>
+        </div>
+      </div>
+
+      <div class="chiffres" id="chiffres"></div>
+      <div class="onglets" id="onglets" role="tablist" aria-label="Filtrer la boite"></div>
+
+      <section class="prioritaires" id="prioritaires" aria-labelledby="titre-prio">
+        <h2 id="titre-prio">A traiter en premier</h2>
+        <div class="grille-prio" id="grille-prio"></div>
+      </section>
+
+      <div class="liste" id="liste" aria-live="polite"></div>
+    </section>
+
+    <!-- VUE DETAIL -->
+    <section id="vue-detail" hidden aria-labelledby="detail-sujet">
+      <div class="entete">
+        <div class="titres">
+          <button type="button" class="btn btn-secondaire" id="retour-boite">Retour a la boite</button>
+        </div>
+      </div>
+      <article class="carte">
+        <div class="rang1">
+          <span class="expediteur" id="detail-de"></span>
+          <span class="heure tabnum" id="detail-heure"></span>
+        </div>
+        <h1 id="detail-sujet" style="margin-top:6px"></h1>
+        <div class="badges" id="detail-badges"></div>
+        <div class="texte-email" id="detail-corps"></div>
+      </article>
+
+      <article class="carte">
+        <h2>Ce que Bataxal en a compris</h2>
+        <div class="encart" style="margin-top:10px">
+          <h3>Resume</h3>
+          <p id="detail-resume"></p>
+        </div>
+        <div class="fiche" id="detail-fiche"></div>
+      </article>
+
+      <article class="carte" id="carte-reponses">
+        <h2>Reponses proposees</h2>
+        <p class="sous" style="color:var(--fg-muted);margin-top:4px">Choisissez un ton, le texte se remplit. Vous gardez la main jusqu'au dernier mot.</p>
+        <div class="reponses" id="detail-reponses"></div>
+        <div class="zone-envoi">
+          <label class="sr" for="zone-texte">Texte de la reponse</label>
+          <textarea id="zone-texte" placeholder="Choisissez une reponse proposee ou ecrivez la votre."></textarea>
+          <div class="actions">
+            <button type="button" class="btn btn-primaire" id="btn-envoyer">Envoyer la reponse</button>
+            <button type="button" class="btn btn-whatsapp" id="btn-whatsapp">Transferer sur WhatsApp</button>
+            <button type="button" class="btn btn-secondaire" id="btn-assigner">Assigner a un collaborateur</button>
+          </div>
+          <div class="confirmation" id="confirmation" hidden></div>
+        </div>
+      </article>
+    </section>
+
+    <!-- VUE BRIEFING -->
+    <section id="vue-briefing" hidden>
+      <div class="entete">
+        <div class="titres">
+          <h1>Votre briefing de 8 h</h1>
+          <p class="sous">Chaque matin, avant d'ouvrir quoi que ce soit, vous recevez ceci sur WhatsApp. Le soir a 18 h, le meme message fait le point sur ce qui reste ouvert.</p>
+        </div>
+      </div>
+      <div class="briefing">
+        <div class="bulle">
+          <span class="exp">Bataxal</span><span id="texte-briefing"></span>
+          <span class="horo tabnum">08:00</span>
+        </div>
+      </div>
+      <div class="finir">
+        <h2>Ce que ce message remplace</h2>
+        <p>Sans lui, il faut ouvrir la boite, lire vingt-quatre objets, en ouvrir la moitie pour comprendre, et esperer n'avoir rien manque. Le briefing dit en dix lignes ce qui compte, avant le premier cafe.</p>
+      </div>
+    </section>
+
+    <!-- VUE REGLES -->
+    <section id="vue-regles" hidden>
+      <div class="entete">
+        <div class="titres">
+          <h1>Vos regles de routage</h1>
+          <p class="sous">Ecrites en francais, sans une ligne de code. Elles tournent sur chaque email des son arrivee.</p>
+        </div>
+      </div>
+      <div id="liste-regles"></div>
+      <div class="finir">
+        <h2>Pourquoi cela compte</h2>
+        <p>Un patron de PME ne veut pas trier, il veut que chaque email atterrisse chez la bonne personne sans passer par lui. Les regles font ce travail la nuit, le briefing du matin dit ce qui reste vraiment pour lui.</p>
+        <div class="actions">
+          <a class="btn btn-primaire" id="lien-retour-2" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Voir ce que cela donne sur ma boite</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<nav class="mobile-nav" id="mobile-nav" aria-label="Navigation"></nav>
+
+<script id="donnees" type="application/json">/*DONNEES*/</script>
+<script>
+(function(){
+  "use strict";
+
+  var D = JSON.parse(document.getElementById("donnees").textContent);
+
+  /* Vocabulaire unique des importances, calque de src/lib/importance.ts.
+     Jamais de code interne visible, uniquement des mots francais. */
+  var IMPORTANCES = {
+    1:{label:"Urgent", badge:true},
+    2:{label:"Important", badge:true},
+    3:{label:"Normal", badge:false},
+    4:{label:"Faible", badge:false}
+  };
+  function libelleImportance(n){ return (IMPORTANCES[n] || IMPORTANCES[3]).label; }
+
+  var ACTIONS = {
+    REPONDRE:"Repondre", PAYER:"Payer", RAPPELER:"Rappeler", RIEN:"Rien a faire"
+  };
+
+  var AVATARS = ["#8FA9C4","#C4A88F","#9CB79C","#C09BA8","#A79CC4","#C4BC8F","#8FBDC4","#B8A0B8"];
+  function couleurAvatar(adresse){
+    var s = 0;
+    for (var i = 0; i < adresse.length; i++) { s = (s * 31 + adresse.charCodeAt(i)) % 100000; }
+    return AVATARS[s % AVATARS.length];
+  }
+  function initiales(nom){
+    var mots = nom.trim().split(/\s+/).filter(function(m){ return /[A-Za-zÀ-ÿ]/.test(m[0]); });
+    if (mots.length === 0) return "?";
+    if (mots.length === 1) return mots[0].slice(0,2).toUpperCase();
+    return (mots[0][0] + mots[mots.length-1][0]).toUpperCase();
+  }
+
+  /* Etat de la demonstration. Une seule source, tout se recalcule depuis elle. */
+  var etat = {
+    vue:"boite",          /* boite | detail | briefing | regles */
+    trie:true,            /* false = "Sans Bataxal" */
+    filtre:"tous",
+    ouvert:null,          /* id d'email */
+    tonChoisi:null
+  };
+  /* Copie de travail des emails, pour que repondre change vraiment quelque chose. */
+  var emails = D.emails.map(function(e){
+    var c = {};
+    for (var k in e) { if (Object.prototype.hasOwnProperty.call(e,k)) c[k] = e[k]; }
+    c.repondu = false;
+    c.assigne = null;
+    return c;
+  });
+
+  function parId(id){
+    for (var i = 0; i < emails.length; i++) { if (emails[i].id === id) return emails[i]; }
+    return null;
+  }
+  function compter(predicat){
+    var n = 0;
+    for (var i = 0; i < emails.length; i++) { if (predicat(emails[i])) n++; }
+    return n;
+  }
+  function aTraiter(e){ return e.action !== "RIEN" && !e.repondu; }
+
+  /* --------- filtres, definis une seule fois et partages par les onglets et la liste --------- */
+  var FILTRES = [
+    { id:"tous", libelle:"Tous", test:function(){ return true; } },
+    { id:"atraiter", libelle:"A traiter", test:function(e){ return aTraiter(e); } },
+    { id:"i1", libelle:"Urgent", test:function(e){ return e.importance === 1; } },
+    { id:"i2", libelle:"Important", test:function(e){ return e.importance === 2; } },
+    { id:"i3", libelle:"Normal", test:function(e){ return e.importance === 3; } },
+    { id:"i4", libelle:"Faible", test:function(e){ return e.importance === 4; } }
+  ];
+  (function ajouterCategories(){
+    var vues = [];
+    for (var i = 0; i < emails.length; i++) {
+      if (vues.indexOf(emails[i].categorie) === -1) vues.push(emails[i].categorie);
+    }
+    vues.sort();
+    vues.forEach(function(cat){
+      FILTRES.push({ id:"cat:" + cat, libelle:cat, test:function(e){ return e.categorie === cat; } });
+    });
+  })();
+  function filtreCourant(){
+    for (var i = 0; i < FILTRES.length; i++) { if (FILTRES[i].id === etat.filtre) return FILTRES[i]; }
+    return FILTRES[0];
+  }
+  function emailsAffiches(){
+    if (!etat.trie) return emails.slice();   /* "Sans Bataxal" : ordre d'arrivee, rien de plus */
+    var f = filtreCourant();
+    return emails.filter(function(e){ return f.test(e); });
+  }
+
+  /* --------------------------- rendu --------------------------- */
+  function vider(n){ while (n.firstChild) n.removeChild(n.firstChild); }
+  function el(tag, classe, texte){
+    var n = document.createElement(tag);
+    if (classe) n.className = classe;
+    if (texte !== undefined && texte !== null) n.textContent = texte;
+    return n;
+  }
+  function badge(classe, texte){ return el("span", "badge " + classe, texte); }
+
+  /* Apercu d'une reponse proposee. Les trois propositions ouvrent par la MEME formule
+     de politesse : afficher la premiere ligne les rendrait identiques a l'ecran, et le
+     differenciateur vendu (trois tons distincts) deviendrait invisible. On montre donc
+     la premiere phrase qui porte reellement le ton. Defaut constate au navigateur. */
+  function apercuReponse(texte){
+    var lignes = texte.split("\n").map(function(l){ return l.trim(); })
+                      .filter(function(l){ return l.length > 0; });
+    for (var i = 0; i < lignes.length; i++) {
+      if (!/^(bonjour|bonsoir|madame|monsieur|cher|chere)\b/i.test(lignes[i])) return lignes[i];
+    }
+    return lignes[0] || "";
+  }
+
+  function rendreChiffres(){
+    var zone = document.getElementById("chiffres");
+    vider(zone);
+    if (!etat.trie) {
+      var c = el("div","chiffre");
+      c.appendChild(Object.assign(el("div","val tabnum", String(emails.length)), {}));
+      c.appendChild(el("div","lib","emails recus, tous au meme niveau"));
+      zone.appendChild(c);
+      return;
+    }
+    var stats = [
+      { val: compter(function(e){ return e.importance === 1; }), lib:"urgents, argent ou client en jeu", accent:true },
+      { val: compter(function(e){ return e.importance === 2; }), lib:"importants, une reponse est attendue" },
+      { val: compter(function(e){ return e.action === "RIEN"; }), lib:"ne demandent rien de vous" },
+      { val: emails.length, lib:"emails recus depuis hier soir" }
+    ];
+    stats.forEach(function(s){
+      var c = el("div","chiffre" + (s.accent ? " accent" : ""));
+      c.appendChild(el("div","val tabnum", String(s.val)));
+      c.appendChild(el("div","lib", s.lib));
+      zone.appendChild(c);
+    });
+  }
+
+  function rendreOnglets(){
+    var zone = document.getElementById("onglets");
+    vider(zone);
+    zone.hidden = !etat.trie;
+    if (!etat.trie) return;
+    FILTRES.forEach(function(f){
+      var n = compter(f.test);
+      var b = el("button","onglet");
+      b.type = "button";
+      b.setAttribute("role","tab");
+      b.setAttribute("aria-selected", String(f.id === etat.filtre));
+      b.dataset.filtre = f.id;
+      b.appendChild(el("span",null,f.libelle));
+      b.appendChild(el("span","pastille-cpt" + (n === 0 ? " vide" : ""), String(n)));
+      b.addEventListener("click", function(){ etat.filtre = f.id; rendre(); });
+      zone.appendChild(b);
+    });
+  }
+
+  function rendrePrioritaires(){
+    var section = document.getElementById("prioritaires");
+    var grille = document.getElementById("grille-prio");
+    vider(grille);
+    var prio = emails.filter(function(e){
+      return (e.importance === 1 || e.importance === 2) && !e.repondu && aTraiter(e);
+    }).slice(0,3);
+    /* Visible uniquement sur l'onglet Tous, en mode trie, et seulement s'il reste du travail. */
+    section.hidden = !etat.trie || etat.filtre !== "tous" || prio.length === 0;
+    if (section.hidden) return;
+    prio.forEach(function(e){
+      var b = el("button","carte-prio" + (e.importance === 2 ? " niveau-2" : ""));
+      b.type = "button";
+      b.dataset.prio = e.id;
+      b.appendChild(el("div","de", e.de));
+      b.appendChild(el("div","sujet-prio", e.sujet));
+      var quoi = ACTIONS[e.action] + (e.deadline ? ", " + e.deadline : "");
+      b.appendChild(el("div","quoi", quoi));
+      b.addEventListener("click", function(){ ouvrir(e.id); });
+      grille.appendChild(b);
+    });
+  }
+
+  function rendreListe(){
+    var zone = document.getElementById("liste");
+    vider(zone);
+    var liste = emailsAffiches();
+    if (liste.length === 0) {
+      var v = el("div","vide");
+      var rond = el("div","rond","0");
+      v.appendChild(rond);
+      /* L'etat vide de la file "A traiter" n'est pas un manque, c'est la recompense :
+         l'ecran se calme quand il n'y a plus rien pour vous (charte 5.4 et 5.7). */
+      if (etat.filtre === "atraiter") {
+        v.appendChild(el("h2",null,"Votre matinee est faite"));
+        v.appendChild(el("p",null,"Plus rien n'attend une action de votre part. Les autres emails sont ranges et consultables quand vous le voulez."));
+      } else {
+        v.appendChild(el("h2",null,"Rien dans cette categorie"));
+        v.appendChild(el("p",null,"Aucun email ne correspond a ce filtre ce matin. Revenez a l'onglet Tous pour voir la boite complete."));
+      }
+      var b = el("button","btn btn-primaire","Revenir a tous les emails");
+      b.type = "button";
+      b.addEventListener("click", function(){ etat.filtre = "tous"; rendre(); });
+      v.appendChild(b);
+      zone.appendChild(v);
+      return;
+    }
+    liste.forEach(function(e){
+      var ligne = el("button","ligne" + (e.lu ? " lu" : ""));
+      ligne.type = "button";
+      ligne.dataset.email = e.id;
+      var av = el("div","avatar", initiales(e.de));
+      av.style.background = couleurAvatar(e.adresse);
+      av.setAttribute("aria-hidden","true");
+      ligne.appendChild(av);
+
+      var corps = el("div","corps");
+      var r1 = el("div","rang1");
+      if (!e.lu) { r1.appendChild(el("span","point")); }
+      r1.appendChild(el("span","expediteur", e.de));
+      r1.appendChild(el("span","heure tabnum", e.heure));
+      corps.appendChild(r1);
+      corps.appendChild(el("div","sujet", e.sujet));
+
+      if (etat.trie) {
+        corps.appendChild(el("div","resume", e.resume));
+        var bs = el("div","badges");
+        if (IMPORTANCES[e.importance].badge) {
+          bs.appendChild(badge("badge-" + e.importance, libelleImportance(e.importance)));
+        }
+        bs.appendChild(badge("badge-theme", e.categorie));
+        if (e.repondu) { bs.appendChild(badge("badge-repondu","Repondu")); }
+        else if (aTraiter(e)) { bs.appendChild(badge("badge-etat","A repondre")); }
+        if (e.piecesJointes > 0) {
+          bs.appendChild(badge("badge-pj", e.piecesJointes + (e.piecesJointes > 1 ? " pieces jointes" : " piece jointe")));
+        }
+        corps.appendChild(bs);
+      }
+      ligne.appendChild(corps);
+      ligne.addEventListener("click", function(){ ouvrir(e.id); });
+      zone.appendChild(ligne);
+    });
+  }
+
+  function rendreEntete(){
+    var sous = document.getElementById("sous-boite");
+    var titre = document.getElementById("titre-boite");
+    if (etat.trie) {
+      titre.textContent = "Boite du jour, triee";
+      sous.textContent = D.entreprise.jour + ". Sur " + emails.length + " emails recus, "
+        + compter(aTraiter) + " attendent encore quelque chose de vous.";
+    } else {
+      titre.textContent = "Boite du jour, telle qu'elle arrive";
+      sous.textContent = D.entreprise.jour + ". " + emails.length
+        + " emails dans l'ordre d'arrivee, sans resume, sans importance, sans categorie. Comme aujourd'hui.";
+    }
+    document.getElementById("bascule-sans").setAttribute("aria-pressed", String(!etat.trie));
+    document.getElementById("bascule-avec").setAttribute("aria-pressed", String(etat.trie));
+  }
+
+  function rendreDetail(){
+    var e = parId(etat.ouvert);
+    if (!e) return;
+    document.getElementById("detail-de").textContent = e.de + ", " + e.adresse;
+    document.getElementById("detail-heure").textContent = e.heure;
+    document.getElementById("detail-sujet").textContent = e.sujet;
+    document.getElementById("detail-corps").textContent = e.corps;
+    document.getElementById("detail-resume").textContent = e.resume;
+
+    var bs = document.getElementById("detail-badges");
+    vider(bs);
+    /* Sur la page de detail, TOUS les niveaux portent un badge, y compris les calmes. */
+    bs.appendChild(badge("badge-" + e.importance, libelleImportance(e.importance)));
+    bs.appendChild(badge("badge-theme", e.categorie));
+    if (e.repondu) bs.appendChild(badge("badge-repondu","Repondu"));
+
+    var fiche = document.getElementById("detail-fiche");
+    vider(fiche);
+    var items = [
+      ["Importance", libelleImportance(e.importance)],
+      ["Categorie", e.categorie],
+      ["Action attendue", ACTIONS[e.action]],
+      ["Echeance", e.deadline || "Aucune"]
+    ];
+    items.forEach(function(it){
+      var d = el("div","item");
+      d.appendChild(el("div","k", it[0]));
+      d.appendChild(el("div","v", it[1]));
+      fiche.appendChild(d);
+    });
+
+    var carte = document.getElementById("carte-reponses");
+    var zone = document.getElementById("detail-reponses");
+    vider(zone);
+    carte.hidden = !e.reponses || e.reponses.length === 0;
+    if (!carte.hidden) {
+      e.reponses.forEach(function(r, i){
+        var b = el("button","reponse");
+        b.type = "button";
+        b.dataset.ton = String(i);
+        b.setAttribute("aria-pressed", String(etat.tonChoisi === i));
+        b.appendChild(el("div","ton", r.ton));
+        b.appendChild(el("div","apercu", apercuReponse(r.texte)));
+        b.addEventListener("click", function(){
+          etat.tonChoisi = i;
+          document.getElementById("zone-texte").value = r.texte;
+          rendreDetail();
+        });
+        zone.appendChild(b);
+      });
+    }
+    var conf = document.getElementById("confirmation");
+    if (e.repondu) {
+      conf.hidden = false;
+      conf.textContent = "Reponse envoyee a " + e.de + ". Cet email est sorti de votre liste a traiter"
+        + (e.assigne ? " et " + e.assigne + " a ete prevenu." : ".");
+    } else if (!conf.dataset.libre) {
+      conf.hidden = true;
+      conf.textContent = "";
+    }
+    document.getElementById("btn-envoyer").disabled = e.repondu;
+  }
+
+  function rendreBriefing(){
+    var urgents = emails.filter(function(e){ return e.importance === 1; });
+    var importants = emails.filter(function(e){ return e.importance === 2; });
+    var calmes = compter(function(e){ return e.action === "RIEN"; });
+    var lignes = [];
+    lignes.push("Bonjour " + D.entreprise.patron.split(" ")[0] + ", voici votre matin.");
+    lignes.push("");
+    lignes.push(emails.length + " emails recus depuis hier soir. " + compter(aTraiter) + " attendent une action.");
+    lignes.push("");
+    lignes.push("URGENT (" + urgents.length + ")");
+    urgents.forEach(function(e){
+      lignes.push("- " + e.de + " : " + e.sujet + (e.deadline ? " (" + e.deadline + ")" : ""));
+    });
+    lignes.push("");
+    lignes.push("IMPORTANT (" + importants.length + ")");
+    importants.forEach(function(e){
+      lignes.push("- " + e.de + " : " + ACTIONS[e.action].toLowerCase() + (e.deadline ? ", " + e.deadline : ""));
+    });
+    lignes.push("");
+    lignes.push(calmes + " autres emails ne demandent rien, ils sont ranges et vous attendent si besoin.");
+    document.getElementById("texte-briefing").textContent = lignes.join("\n");
+  }
+
+  function rendreRegles(){
+    var zone = document.getElementById("liste-regles");
+    vider(zone);
+    D.regles.forEach(function(r){
+      var d = el("div","regle");
+      d.appendChild(el("div","nom", r.nom));
+      var c = el("div","cond");
+      c.appendChild(el("b",null,"Si "));
+      c.appendChild(document.createTextNode(r.si + ". "));
+      c.appendChild(el("b",null,"Alors "));
+      c.appendChild(document.createTextNode(r.alors + "."));
+      d.appendChild(c);
+      var n = r.touches.length;
+      d.appendChild(el("div","cond", "Ce matin, cette regle a traite " + n
+        + (n > 1 ? " emails sans vous deranger." : " email sans vous deranger.")));
+      zone.appendChild(d);
+    });
+  }
+
+  /* --------------------------- navigation --------------------------- */
+  var VUES = [
+    { id:"boite", libelle:"Boite triee", section:"vue-boite" },
+    { id:"briefing", libelle:"Briefing 8 h", section:"vue-briefing" },
+    { id:"regles", libelle:"Regles", section:"vue-regles" },
+    { id:"detail", libelle:null, section:"vue-detail" }
+  ];
+
+  function rendreMenus(){
+    [["menu-bureau", false], ["mobile-nav", true]].forEach(function(pair){
+      var zone = document.getElementById(pair[0]);
+      vider(zone);
+      VUES.filter(function(v){ return v.libelle; }).forEach(function(v){
+        var b = el("button", pair[1] ? null : null, null);
+        b.type = "button";
+        b.dataset.vue = v.id;
+        var actif = (etat.vue === v.id) || (etat.vue === "detail" && v.id === "boite");
+        if (actif) b.setAttribute("aria-current","page"); else b.removeAttribute("aria-current");
+        b.appendChild(el("span", null, v.libelle));
+        if (!pair[1] && v.id === "boite") {
+          b.appendChild(el("span","cpt tabnum", String(compter(aTraiter))));
+        }
+        b.addEventListener("click", function(){ allerA(v.id); });
+        zone.appendChild(b);
+      });
+    });
+  }
+
+  function allerA(vue){
+    etat.vue = vue;
+    if (vue !== "detail") { etat.ouvert = null; etat.tonChoisi = null; }
+    rendre();
+    if (typeof window.scrollTo === "function") window.scrollTo(0,0);
+  }
+
+  function ouvrir(id){
+    var e = parId(id);
+    if (!e) return;
+    e.lu = true;
+    etat.ouvert = id;
+    etat.tonChoisi = null;
+    etat.vue = "detail";
+    var zone = document.getElementById("zone-texte");
+    zone.value = "";
+    var conf = document.getElementById("confirmation");
+    delete conf.dataset.libre;
+    rendre();
+    if (typeof window.scrollTo === "function") window.scrollTo(0,0);
+  }
+
+  function rendre(){
+    VUES.forEach(function(v){
+      document.getElementById(v.section).hidden = (etat.vue !== v.id);
+    });
+    if (etat.vue === "boite") {
+      rendreEntete(); rendreChiffres(); rendreOnglets(); rendrePrioritaires(); rendreListe();
+    } else if (etat.vue === "detail") {
+      rendreDetail();
+    } else if (etat.vue === "briefing") {
+      rendreBriefing();
+    } else if (etat.vue === "regles") {
+      rendreRegles();
+    }
+    rendreMenus();
+  }
+
+  /* --------------------------- actions --------------------------- */
+  document.getElementById("bascule-sans").addEventListener("click", function(){
+    etat.trie = false; etat.filtre = "tous"; rendre();
+  });
+  document.getElementById("bascule-avec").addEventListener("click", function(){
+    etat.trie = true; rendre();
+  });
+  document.getElementById("retour-boite").addEventListener("click", function(){ allerA("boite"); });
+
+  document.getElementById("btn-envoyer").addEventListener("click", function(){
+    var e = parId(etat.ouvert);
+    if (!e) return;
+    var texte = document.getElementById("zone-texte").value.trim();
+    var conf = document.getElementById("confirmation");
+    if (texte.length === 0) {
+      conf.hidden = false;
+      conf.dataset.libre = "1";
+      conf.textContent = "Choisissez une reponse proposee ou ecrivez la votre avant d'envoyer.";
+      return;
+    }
+    delete conf.dataset.libre;
+    e.repondu = true;
+    rendre();
+  });
+
+  document.getElementById("btn-whatsapp").addEventListener("click", function(){
+    var e = parId(etat.ouvert);
+    if (!e) return;
+    var conf = document.getElementById("confirmation");
+    conf.hidden = false;
+    conf.dataset.libre = "1";
+    conf.textContent = "Dans la version reelle, cet email part sur le WhatsApp de la personne concernee, "
+      + "resume et pieces jointes comprises. Ici, rien n'est envoye, c'est une demonstration.";
+  });
+
+  document.getElementById("btn-assigner").addEventListener("click", function(){
+    var e = parId(etat.ouvert);
+    if (!e) return;
+    var qui = D.equipe[0];
+    for (var i = 0; i < D.regles.length; i++) {
+      if (D.regles[i].touches.indexOf(e.id) !== -1) {
+        var nom = D.regles[i].alors;
+        for (var j = 0; j < D.equipe.length; j++) {
+          if (nom.indexOf(D.equipe[j].nom) !== -1) { qui = D.equipe[j]; break; }
+        }
+        break;
+      }
+    }
+    e.assigne = qui.nom;
+    var conf = document.getElementById("confirmation");
+    conf.hidden = false;
+    conf.dataset.libre = "1";
+    conf.textContent = "Assigne a " + qui.nom + ", " + qui.role.toLowerCase()
+      + ". Elle ou il recoit l'email, le resume et l'echeance, et vous voyez ou en est le dossier.";
+    rendreMenus();
+  });
+
+  /* --------------------------- demarrage --------------------------- */
+  document.getElementById("org-bureau").textContent = D.entreprise.nom;
+  document.getElementById("org-mobile").textContent = D.entreprise.nom;
+  rendre();
+
+  /* Expose pour le harnais de preuve, sans quoi rien n'est verifiable de l'exterieur. */
+  window.__bataxal = {
+    etat: etat,
+    emails: emails,
+    filtres: FILTRES,
+    compter: compter,
+    aTraiter: aTraiter,
+    libelleImportance: libelleImportance,
+    ouvrir: ouvrir,
+    allerA: allerA
+  };
+})();
+</script>
+</body>
+</html>
