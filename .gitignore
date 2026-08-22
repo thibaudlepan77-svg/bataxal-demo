@@ -6,3 +6,5 @@ data/interdits.local.json
 CADRAGE.md
 REVUE-*.md
 CHANTIER-*.md
+accentuer-*.js
+*.tmp.js

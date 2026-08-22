@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bataxal, demonstration : votre boite mail triee par l'IA</title>
-<meta name="description" content="Demonstration publique de Bataxal. 24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses proposees. Aucun compte, aucune connexion a votre boite.">
+<title>Bataxal, démonstration : votre boîte mail triée par l'IA</title>
+<meta name="description" content="Démonstration publique de Bataxal. 24 emails d'une PME de Dakar, triés par importance, résumés en deux phrases, avec les réponses proposées. Aucun compte, aucune connexion à votre boîte.">
 <!-- Carte d'apercu. Ce lien se partage d'abord sur WhatsApp : sans ces balises il se colle
      en URL nue, ce qui ressemble a du spam et fait perdre le clic avant la demonstration. -->
 <link rel="canonical" href="https://thibaudlepan77-svg.github.io/bataxal-demo/">
@@ -12,15 +12,15 @@
 <meta property="og:url" content="https://thibaudlepan77-svg.github.io/bataxal-demo/">
 <meta property="og:site_name" content="Jaayleer">
 <meta property="og:locale" content="fr_SN">
-<meta property="og:title" content="Bataxal : votre boite mail triee par l'IA, en une minute">
-<meta property="og:description" content="24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses deja redigees. Demonstration a ouvrir sans compte.">
+<meta property="og:title" content="Bataxal : votre boîte mail triée par l'IA, en une minute">
+<meta property="og:description" content="24 emails d'une PME de Dakar, triés par importance, résumés en deux phrases, avec les réponses déjà rédigées. Démonstration à ouvrir sans compte.">
 <meta property="og:image" content="https://thibaudlepan77-svg.github.io/bataxal-demo/apercu.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Bataxal, la boite du jour triee : 3 urgents, 5 importants, 16 qui ne demandent rien.">
+<meta property="og:image:alt" content="Bataxal, la boîte du jour triée : 3 urgents, 5 importants, 16 qui ne demandent rien.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bataxal : votre boite mail triee par l'IA, en une minute">
-<meta name="twitter:description" content="24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses deja redigees. Demonstration a ouvrir sans compte.">
+<meta name="twitter:title" content="Bataxal : votre boîte mail triée par l'IA, en une minute">
+<meta name="twitter:description" content="24 emails d'une PME de Dakar, triés par importance, résumés en deux phrases, avec les réponses déjà rédigées. Démonstration à ouvrir sans compte.">
 <meta name="twitter:image" content="https://thibaudlepan77-svg.github.io/bataxal-demo/apercu.png">
 <style>
 :root{
@@ -256,11 +256,11 @@ a{color:var(--green-deep)}
 </head>
 <body>
 
-<div class="bandeau" role="region" aria-label="A propos de cette demonstration">
-  <span class="pastille">Demonstration</span>
-  <span class="txt" id="texte-bandeau">Entreprise et emails fictifs. Aucune connexion a votre boite, aucun compte a creer. Les analyses affichees ont ete produites a l'avance pour cette demonstration.</span>
+<div class="bandeau" role="region" aria-label="À propos de cette démonstration">
+  <span class="pastille">Démonstration</span>
+  <span class="txt" id="texte-bandeau">Entreprise et emails fictifs. Aucune connexion à votre boîte, aucun compte à créer. Les analyses affichées ont été produites à l'avance pour cette démonstration.</span>
   <span class="actions-bandeau">
-    <a class="retour" id="lien-retour" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Parler a un humain</a>
+    <a class="retour" id="lien-retour" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20d%C3%A9monstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20bo%C3%AEte%20mail.">Parler à un humain</a>
     <a class="retour offre" id="lien-offre" href="https://thibaudlepan77-svg.github.io/bataxal/">Voir les prix</a>
   </span>
 </div>
@@ -286,7 +286,7 @@ a{color:var(--green-deep)}
     </div>
     <div class="menu" id="menu-bureau"></div>
     <div class="pied">
-      Demonstration a donnees fictives.<br>Le produit reel est deploye en production.
+      Démonstration à données fictives.<br>Le produit réel est déployé en production.
     </div>
   </nav>
 
@@ -295,10 +295,10 @@ a{color:var(--green-deep)}
     <section id="vue-boite">
       <div class="entete">
         <div class="titres">
-          <h1 id="titre-boite">Boite du jour</h1>
+          <h1 id="titre-boite">Boîte du jour</h1>
           <p class="sous" id="sous-boite"></p>
         </div>
-        <div class="bascule" role="group" aria-label="Comparer avant et apres">
+        <div class="bascule" role="group" aria-label="Comparer avant et après">
           <button type="button" id="bascule-sans" aria-pressed="false">Sans Bataxal</button>
           <button type="button" id="bascule-avec" aria-pressed="true">Avec Bataxal</button>
         </div>
@@ -308,7 +308,7 @@ a{color:var(--green-deep)}
       <div class="onglets" id="onglets" role="tablist" aria-label="Filtrer la boite"></div>
 
       <section class="prioritaires" id="prioritaires" aria-labelledby="titre-prio">
-        <h2 id="titre-prio">A traiter en premier</h2>
+        <h2 id="titre-prio">À traiter en premier</h2>
         <div class="grille-prio" id="grille-prio"></div>
       </section>
 
@@ -319,7 +319,7 @@ a{color:var(--green-deep)}
     <section id="vue-detail" hidden aria-labelledby="detail-sujet">
       <div class="entete">
         <div class="titres">
-          <button type="button" class="btn btn-secondaire" id="retour-boite">Retour a la boite</button>
+          <button type="button" class="btn btn-secondaire" id="retour-boite">Retour à la boîte</button>
         </div>
       </div>
       <article class="carte">
@@ -335,23 +335,23 @@ a{color:var(--green-deep)}
       <article class="carte">
         <h2>Ce que Bataxal en a compris</h2>
         <div class="encart" style="margin-top:10px">
-          <h3>Resume</h3>
+          <h3>Résumé</h3>
           <p id="detail-resume"></p>
         </div>
         <div class="fiche" id="detail-fiche"></div>
       </article>
 
       <article class="carte" id="carte-reponses">
-        <h2>Reponses proposees</h2>
+        <h2>Réponses proposées</h2>
         <p class="sous" style="color:var(--fg-muted);margin-top:4px">Choisissez un ton, le texte se remplit. Vous gardez la main jusqu'au dernier mot.</p>
         <div class="reponses" id="detail-reponses"></div>
         <div class="zone-envoi">
-          <label class="sr" for="zone-texte">Texte de la reponse</label>
-          <textarea id="zone-texte" placeholder="Choisissez une reponse proposee ou ecrivez la votre."></textarea>
+          <label class="sr" for="zone-texte">Texte de la réponse</label>
+          <textarea id="zone-texte" placeholder="Choisissez une réponse proposée ou écrivez la vôtre."></textarea>
           <div class="actions">
-            <button type="button" class="btn btn-primaire" id="btn-envoyer">Envoyer la reponse</button>
-            <button type="button" class="btn btn-whatsapp" id="btn-whatsapp">Transferer sur WhatsApp</button>
-            <button type="button" class="btn btn-secondaire" id="btn-assigner">Assigner a un collaborateur</button>
+            <button type="button" class="btn btn-primaire" id="btn-envoyer">Envoyer la réponse</button>
+            <button type="button" class="btn btn-whatsapp" id="btn-whatsapp">Transférer sur WhatsApp</button>
+            <button type="button" class="btn btn-secondaire" id="btn-assigner">Assigner à un collaborateur</button>
           </div>
           <div class="confirmation" id="confirmation" hidden></div>
         </div>
@@ -363,7 +363,7 @@ a{color:var(--green-deep)}
       <div class="entete">
         <div class="titres">
           <h1>Votre briefing de 8 h</h1>
-          <p class="sous">Chaque matin, avant d'ouvrir quoi que ce soit, vous recevez ceci sur WhatsApp. Le soir a 18 h, le meme message fait le point sur ce qui reste ouvert.</p>
+          <p class="sous">Chaque matin, avant d'ouvrir quoi que ce soit, vous recevez ceci sur WhatsApp. Le soir à 18 h, le même message fait le point sur ce qui reste ouvert.</p>
         </div>
       </div>
       <div class="briefing">
@@ -374,7 +374,7 @@ a{color:var(--green-deep)}
       </div>
       <div class="finir">
         <h2>Ce que ce message remplace</h2>
-        <p>Sans lui, il faut ouvrir la boite, lire vingt-quatre objets, en ouvrir la moitie pour comprendre, et esperer n'avoir rien manque. Le briefing dit en dix lignes ce qui compte, avant le premier cafe.</p>
+        <p>Sans lui, il faut ouvrir la boîte, lire vingt-quatre objets, en ouvrir la moitié pour comprendre, et espérer n'avoir rien manqué. Le briefing dit en dix lignes ce qui compte, avant le premier café.</p>
       </div>
     </section>
 
@@ -382,16 +382,16 @@ a{color:var(--green-deep)}
     <section id="vue-regles" hidden>
       <div class="entete">
         <div class="titres">
-          <h1>Vos regles de routage</h1>
-          <p class="sous">Ecrites en francais, sans une ligne de code. Elles tournent sur chaque email des son arrivee.</p>
+          <h1>Vos règles de routage</h1>
+          <p class="sous">Écrites en français, sans une ligne de code. Elles tournent sur chaque email dès son arrivée.</p>
         </div>
       </div>
       <div id="liste-regles"></div>
       <div class="finir">
         <h2>Pourquoi cela compte</h2>
-        <p>Un patron de PME ne veut pas trier, il veut que chaque email atterrisse chez la bonne personne sans passer par lui. Les regles font ce travail la nuit, le briefing du matin dit ce qui reste vraiment pour lui.</p>
+        <p>Un patron de PME ne veut pas trier, il veut que chaque email atterrisse chez la bonne personne sans passer par lui. Les règles font ce travail la nuit, le briefing du matin dit ce qui reste vraiment pour lui.</p>
         <div class="actions">
-          <a class="btn btn-primaire" id="lien-retour-2" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Voir ce que cela donne sur ma boite</a>
+          <a class="btn btn-primaire" id="lien-retour-2" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20d%C3%A9monstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20bo%C3%AEte%20mail.">Voir ce que cela donne sur ma boîte</a>
           <a class="btn btn-secondaire" id="lien-offre-2" href="https://thibaudlepan77-svg.github.io/bataxal/">Voir les prix et les formules</a>
         </div>
       </div>
@@ -401,7 +401,7 @@ a{color:var(--green-deep)}
 
 <nav class="mobile-nav" id="mobile-nav" aria-label="Navigation"></nav>
 
-<script id="donnees" type="application/json">{"entreprise":{"nom":"Ndiaye & Fils","activite":"Quincaillerie et materiaux de construction, Dakar","patron":"Moussa Ndiaye","boite":"contact@ndiaye-et-fils.sn","jour":"Ce matin, 8 h 05"},"equipe":[{"id":"fatou","nom":"Fatou Sarr","role":"Comptabilite"},{"id":"ibrahima","nom":"Ibrahima Diop","role":"Commercial"},{"id":"awa","nom":"Awa Ba","role":"Logistique"}],"regles":[{"nom":"Les factures fournisseurs partent chez Fatou","si":"Categorie = Facture ou Banque","alors":"Assigner a Fatou Sarr et notifier par WhatsApp","touches":["e02","e06","e07","e09"]},{"nom":"Toute demande de devis remonte au commercial","si":"Categorie = Client et action = Repondre","alors":"Assigner a Ibrahima Diop","touches":["e01","e05","e08"]},{"nom":"Les livraisons vont a la logistique","si":"Categorie = Fournisseur ou expediteur contient dhl","alors":"Assigner a Awa Ba","touches":["e03","e10","e15"]}],"emails":[{"id":"e01","de":"Cheikh Fall","adresse":"c.fall@senegindia-btp.sn","sujet":"Commande de 240 sacs de ciment, livraison avant vendredi","heure":"07:52","importance":1,"categorie":"Client","resume":"Chantier de Diamniadio a l'arret, il lui manque 240 sacs de ciment CEM II. Il demande une confirmation de livraison avant vendredi midi, sinon il commande ailleurs.","action":"REPONDRE","deadline":"Vendredi 12 h","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour Monsieur Ndiaye,\n\nNotre chantier de Diamniadio est bloque faute de ciment. Il nous faut 240 sacs de CEM II 42,5 livres sur site avant vendredi 12 h.\n\nPouvez-vous me confirmer la disponibilite et le prix rendu chantier aujourd'hui ? Au dela de vendredi je serai oblige de me tourner vers un autre fournisseur, ce que je prefererais eviter.\n\nCordialement,\nCheikh Fall, SENEGINDIA BTP","reponses":[{"ton":"Confirmer et rassurer","texte":"Bonjour Monsieur Fall,\n\nC'est note. Les 240 sacs de CEM II 42,5 sont disponibles en stock et je bloque la quantite a votre nom des maintenant. Livraison sur le chantier de Diamniadio jeudi dans la matinee, donc avant votre echeance de vendredi midi.\n\nJe vous envoie le bon de commande avec le prix rendu chantier dans l'heure.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Confirmer avec une contrepartie","texte":"Bonjour Monsieur Fall,\n\nLes 240 sacs sont disponibles et je peux livrer jeudi matin sur Diamniadio. Compte tenu du volume et de l'urgence, je vous propose le prix rendu chantier contre un reglement a la livraison plutot qu'a trente jours.\n\nDites-moi si cela vous convient et je lance la preparation immediatement.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Gagner du temps sans perdre le client","texte":"Bonjour Monsieur Fall,\n\nBien recu, je traite votre demande en priorite. Je verifie le stock exact et la disponibilite du camion et je reviens vers vous avant midi avec une date ferme et le prix rendu chantier.\n\nVotre chantier ne restera pas a l'arret a cause de nous.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e02","de":"Banque Atlantique","adresse":"notifications@banqueatlantique.sn","sujet":"Prelevement rejete sur le compte 0021 4478","heure":"06:14","importance":1,"categorie":"Banque","resume":"Un prelevement de 1 240 000 FCFA a ete rejete faute de provision sur le compte principal. Des frais de rejet s'appliquent si la situation n'est pas regularisee sous 48 heures.","action":"PAYER","deadline":"Sous 48 heures","sentiment":"NEGATIF","piecesJointes":1,"lu":false,"corps":"Cher client,\n\nNous vous informons qu'un prelevement d'un montant de 1 240 000 FCFA presente le 21 aout sur votre compte 0021 4478 n'a pas pu etre honore, la provision etant insuffisante.\n\nUne nouvelle presentation aura lieu sous 48 heures. A defaut de provision, des frais de rejet seront appliques et l'incident sera enregistre.\n\nService clientele, Banque Atlantique","reponses":[]},{"id":"e03","de":"Ciments du Sahel","adresse":"commercial@cimentsdusahel.sn","sujet":"Hausse tarifaire au 1er septembre, commandes a confirmer avant le 28","heure":"07:31","importance":1,"categorie":"Fournisseur","resume":"Les tarifs augmentent de 6 pour cent au 1er septembre. Toute commande confirmee avant le 28 aout reste facturee a l'ancien tarif.","action":"REPONDRE","deadline":"28 aout","sentiment":"NEUTRE","piecesJointes":2,"lu":false,"corps":"Bonjour,\n\nNous vous informons d'une revalorisation de nos tarifs de 6 pour cent effective au 1er septembre 2026, liee au cout du fret et de l'energie.\n\nToute commande fermement confirmee et reglee a l'acompte avant le 28 aout sera honoree a l'ancien tarif, y compris pour des livraisons echelonnees jusqu'a fin octobre.\n\nGrille jointe. Bien cordialement,\nDirection commerciale, Ciments du Sahel","reponses":[{"ton":"Securiser le stock a l'ancien prix","texte":"Bonjour,\n\nMerci pour l'information. Nous confirmons une commande ferme avant le 28 aout et souhaitons profiter de l'ancien tarif sur des livraisons echelonnees jusqu'a fin octobre.\n\nMerci de m'adresser la proforma correspondante ainsi que le montant de l'acompte a regler.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Negocier avant de confirmer","texte":"Bonjour,\n\nMerci pour cette information anticipee. Avant de confirmer, je souhaiterais connaitre les conditions applicables a un engagement de volume sur le trimestre, ainsi que les delais de livraison garantis sur Dakar et Diamniadio.\n\nJe reviens vers vous avant le 28 aout.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Accuser reception sans s'engager","texte":"Bonjour,\n\nBien recu, merci pour la grille jointe. J'etudie nos besoins des prochaines semaines et je reviens vers vous avec une commande ferme avant l'echeance du 28 aout.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e04","de":"Mairie de Rufisque","adresse":"marches@mairie-rufisque.sn","sujet":"Appel d'offres 2026-14, fourniture de materiaux, depot le 3 septembre","heure":"07:05","importance":2,"categorie":"Administration","resume":"Appel d'offres pour la fourniture de materiaux de construction sur trois ecoles. Les plis doivent etre deposes le 3 septembre a 10 h au plus tard.","action":"REPONDRE","deadline":"3 septembre, 10 h","sentiment":"NEUTRE","piecesJointes":3,"lu":false,"corps":"Madame, Monsieur,\n\nLa commune de Rufisque lance l'appel d'offres 2026-14 relatif a la fourniture de materiaux de construction pour la rehabilitation de trois etablissements scolaires.\n\nLe dossier de consultation est joint. Les plis seront recus jusqu'au 3 septembre 2026 a 10 h precises, a la direction des marches.\n\nLe service des marches publics","reponses":[]},{"id":"e05","de":"Hotel Terrou-Bi","adresse":"achats@terroubi.sn","sujet":"Devis DEV-0912, question sur les delais","heure":"07:19","importance":2,"categorie":"Client","resume":"Le devis DEV-0912 convient sur le prix mais le delai de trois semaines pose probleme. Ils demandent si une partie peut etre livree la semaine prochaine.","action":"REPONDRE","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Bonjour,\n\nVotre devis DEV-0912 nous convient sur le plan tarifaire. En revanche, le delai annonce de trois semaines est trop long pour la renovation de l'aile nord.\n\nSerait-il possible de livrer une premiere partie des la semaine prochaine, quitte a echelonner le reste ?\n\nBien cordialement,\nService achats, Terrou-Bi","reponses":[{"ton":"Livraison en deux fois","texte":"Bonjour,\n\nMerci pour votre retour. Nous pouvons livrer des mardi prochain la premiere moitie de la commande, ce qui vous permet de demarrer l'aile nord sans attendre, le solde suivant sous quinze jours.\n\nJe vous adresse un devis rectifie precisant les deux echeances.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Verifier avant de promettre","texte":"Bonjour,\n\nMerci de votre retour, le point sur les delais est entendu. Je verifie aujourd'hui ce que nous pouvons sortir du stock des la semaine prochaine et je vous confirme demain une date ferme pour cette premiere partie.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Proposer une alternative equivalente","texte":"Bonjour,\n\nLe delai de trois semaines vient d'une reference precise. Nous disposons en stock d'une reference equivalente, de meme classe et au meme prix, livrable sous quatre jours.\n\nSi vous le souhaitez, je vous fais parvenir la fiche technique pour validation.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e06","de":"SENELEC","adresse":"facturation@senelec.sn","sujet":"Facture d'electricite du mois d'aout, 184 500 FCFA","heure":"05:40","importance":2,"categorie":"Facture","resume":"Facture d'electricite du depot de 184 500 FCFA. Echeance de paiement au 5 septembre.","action":"PAYER","deadline":"5 septembre","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nVeuillez trouver ci-joint votre facture d'electricite du mois d'aout 2026 pour le point de livraison du depot, d'un montant de 184 500 FCFA.\n\nDate limite de paiement, le 5 septembre 2026.\n\nSENELEC, service facturation","reponses":[]},{"id":"e07","de":"Cabinet Diagne & Associes","adresse":"m.diagne@cabinet-diagne.sn","sujet":"Declaration de TVA de juillet a valider","heure":"06:58","importance":2,"categorie":"Facture","resume":"Le comptable a prepare la declaration de TVA de juillet et attend une validation ecrite avant telechargement. Le depot doit avoir lieu avant la fin du mois.","action":"REPONDRE","deadline":"Fin du mois","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour Monsieur Ndiaye,\n\nLa declaration de TVA du mois de juillet est prete, vous la trouverez en piece jointe. Le montant a reverser ressort a 612 300 FCFA.\n\nMerci de me confirmer par retour que je peux proceder au telechargement, le depot devant intervenir avant la fin du mois.\n\nBien a vous,\nMamadou Diagne","reponses":[]},{"id":"e08","de":"Residence Les Almadies","adresse":"syndic@residence-almadies.sn","sujet":"Relance, nous attendons votre retour depuis six jours","heure":"07:44","importance":2,"categorie":"Client","resume":"Le syndic attend depuis six jours une reponse a sa demande de devis pour la reprise des garde-corps. Le ton se tend et une autre entreprise a ete consultee.","action":"REPONDRE","deadline":"Aujourd'hui","sentiment":"NEGATIF","piecesJointes":0,"lu":false,"corps":"Bonjour,\n\nNous vous avons sollicites le 16 aout pour un devis de reprise des garde-corps de la residence et sommes toujours sans nouvelles.\n\nNous avons consulte une autre entreprise dans l'intervalle. Si votre proposition ne nous parvient pas cette semaine, nous poursuivrons avec elle.\n\nLe syndic","reponses":[{"ton":"Reconnaitre le retard et agir","texte":"Bonjour,\n\nVous avez raison de nous relancer et je vous prie d'excuser ce delai, votre demande du 16 aout n'a pas ete traitee dans les temps de notre cote.\n\nJe reprends le dossier personnellement aujourd'hui, un metre passe demain matin sur site et vous recevez le devis complet sous 48 heures.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Reprendre la main avec un engagement date","texte":"Bonjour,\n\nMerci pour votre relance et desole pour l'attente. Vous recevrez notre proposition chiffree pour la reprise des garde-corps avant vendredi 12 h, avec le detail des sections et le delai de pose.\n\nSi vous souhaitez en discuter avant, je suis joignable toute la journee.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Repondre et se differencier","texte":"Bonjour,\n\nJe vous prie d'excuser ce silence, il ne correspond pas a notre facon de travailler. Notre devis vous parvient sous 48 heures.\n\nIl inclura la depose de l'existant et l'evacuation, deux postes souvent absents des offres concurrentes et systematiquement facturees en cours de chantier.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e09","de":"Orange Senegal","adresse":"facture-pro@orange.sn","sujet":"Votre facture professionnelle du mois d'aout","heure":"04:12","importance":3,"categorie":"Facture","resume":"Facture mensuelle des lignes professionnelles, 47 000 FCFA, prelevement automatique deja programme.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nVotre facture professionnelle du mois d'aout est disponible, montant 47 000 FCFA. Le prelevement automatique interviendra le 28 aout, aucune action n'est requise de votre part.\n\nOrange Senegal","reponses":[]},{"id":"e10","de":"DHL Express","adresse":"noreply@dhl.com","sujet":"Votre colis 4471 2280 a ete livre","heure":"06:33","importance":3,"categorie":"Notification","resume":"Le colis 4471 2280 contenant les pieces de rechange a ete livre au depot et signe par Awa Ba.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Votre envoi 4471 2280 a ete livre le 22 aout a 06 h 28, signe par A. BA.\n\nDHL Express","reponses":[]},{"id":"e11","de":"Ousmane Kane","adresse":"ousmane.kane88@gmail.com","sujet":"Candidature spontanee, poste de magasinier","heure":"22:47","importance":3,"categorie":"Recrutement","resume":"Candidature spontanee d'un magasinier avec quatre ans d'experience en depot de materiaux. CV joint, disponible immediatement.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nJe me permets de vous adresser ma candidature spontanee au poste de magasinier. J'ai quatre ans d'experience en depot de materiaux de construction et je suis disponible immediatement.\n\nVous trouverez mon CV en piece jointe.\n\nRespectueusement,\nOusmane Kane","reponses":[]},{"id":"e12","de":"Chambre de Commerce de Dakar","adresse":"evenements@cciad.sn","sujet":"Salon du batiment, 12 au 14 septembre, invitation exposant","heure":"23:10","importance":3,"categorie":"Administration","resume":"Invitation a exposer au salon du batiment de Dakar du 12 au 14 septembre. Les inscriptions exposants ferment le 30 aout.","action":"RIEN","deadline":"30 aout","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Madame, Monsieur,\n\nLa Chambre de commerce de Dakar organise le salon du batiment du 12 au 14 septembre au CICES. Les inscriptions exposants sont ouvertes jusqu'au 30 aout.\n\nProgramme et tarifs en piece jointe.\n\nLe service evenements","reponses":[]},{"id":"e13","de":"Aminata Sow","adresse":"a.sow@groupe-sow.sn","sujet":"Bien recu, merci","heure":"21:58","importance":3,"categorie":"Client","resume":"Accuse de reception du bon de livraison envoye hier. Aucune action attendue.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Bonsoir,\n\nJ'ai bien recu le bon de livraison, tout est conforme. Merci pour la reactivite.\n\nAminata Sow","reponses":[]},{"id":"e14","de":"Wave Business","adresse":"business@wave.com","sujet":"Recapitulatif de vos encaissements de la semaine","heure":"05:02","importance":3,"categorie":"Banque","resume":"Recapitulatif hebdomadaire des encaissements Wave, 3 470 000 FCFA sur 41 transactions.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Bonjour,\n\nVoici le recapitulatif de vos encaissements de la semaine du 15 au 21 aout, 3 470 000 FCFA pour 41 transactions.\n\nWave Business","reponses":[]},{"id":"e15","de":"Quincaillerie du Fleuve","adresse":"ventes@quincaillerie-fleuve.sn","sujet":"Notre nouveau catalogue outillage est disponible","heure":"20:33","importance":3,"categorie":"Fournisseur","resume":"Envoi du catalogue outillage de la rentree avec les nouvelles conditions revendeur. Aucune echeance.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nNotre catalogue outillage de la rentree est disponible en piece jointe, avec les conditions revendeur mises a jour.\n\nL'equipe commerciale","reponses":[]},{"id":"e16","de":"AXA Senegal","adresse":"clients@axa.sn","sujet":"Attestation de flotte automobile renouvelee","heure":"04:48","importance":3,"categorie":"Administration","resume":"L'attestation d'assurance de la flotte a ete renouvelee jusqu'au 31 aout 2027 et est jointe au message.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nVotre contrat de flotte automobile a ete renouvele. L'attestation valable jusqu'au 31 aout 2027 est jointe a ce message.\n\nAXA Senegal","reponses":[]},{"id":"e17","de":"LinkedIn","adresse":"news@linkedin.com","sujet":"18 nouvelles offres correspondent a votre profil","heure":"03:21","importance":4,"categorie":"Publicite","resume":"Notification automatique d'offres d'emploi. Sans lien avec l'activite.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Decouvrez les 18 nouvelles offres qui correspondent a votre profil.","reponses":[]},{"id":"e18","de":"Boostez votre visibilite","adresse":"contact@visibilite-pro-afrique.com","sujet":"Votre entreprise merite d'etre en premiere page","heure":"02:55","importance":4,"categorie":"Publicite","resume":"Demarchage commercial pour du referencement. Aucune relation d'affaires existante.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Bonjour, votre entreprise merite d'etre en premiere page de Google. Nos forfaits demarrent a 29 euros par mois.","reponses":[]},{"id":"e19","de":"Jumia Business","adresse":"newsletter@jumia.sn","sujet":"Les meilleures affaires de la semaine pour votre bureau","heure":"02:10","importance":4,"categorie":"Publicite","resume":"Newsletter promotionnelle hebdomadaire.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Les meilleures affaires de la semaine pour equiper votre bureau.","reponses":[]},{"id":"e20","de":"Webinaires Pro","adresse":"invitations@webinaires-pro.net","sujet":"Webinaire gratuit, doublez votre chiffre d'affaires en 90 jours","heure":"01:44","importance":4,"categorie":"Publicite","resume":"Invitation a un webinaire commercial non sollicite.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Inscrivez-vous gratuitement a notre webinaire, places limitees.","reponses":[]},{"id":"e21","de":"Google Agenda","adresse":"calendar-notification@google.com","sujet":"Rappel, point equipe a 9 h","heure":"01:00","importance":4,"categorie":"Notification","resume":"Rappel automatique d'un evenement deja present dans l'agenda.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Rappel, point equipe aujourd'hui a 9 h.","reponses":[]},{"id":"e22","de":"Imprimerie Teranga","adresse":"promo@imprimerie-teranga.sn","sujet":"Moins 30 pour cent sur vos supports de communication","heure":"00:38","importance":4,"categorie":"Publicite","resume":"Offre promotionnelle d'un imprimeur, sans commande en cours.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Profitez de moins 30 pour cent sur vos cartes de visite et flyers jusqu'a la fin du mois.","reponses":[]},{"id":"e23","de":"BTP Afrique Hebdo","adresse":"lettre@btpafrique.com","sujet":"La lettre du BTP, numero 214","heure":"00:12","importance":4,"categorie":"Publicite","resume":"Lettre d'information sectorielle hebdomadaire.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Au sommaire cette semaine, les prix des materiaux et les grands chantiers de la sous-region.","reponses":[]},{"id":"e24","de":"Facebook","adresse":"notification@facebookmail.com","sujet":"Votre page a 4 nouveaux avis","heure":"23:31","importance":4,"categorie":"Notification","resume":"Notification automatique d'un reseau social.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Votre page a recu 4 nouveaux avis cette semaine.","reponses":[]}]}</script>
+<script id="donnees" type="application/json">{"entreprise":{"nom":"Ndiaye & Fils","activite":"Quincaillerie et matériaux de construction, Dakar","patron":"Moussa Ndiaye","boite":"contact@ndiaye-et-fils.sn","jour":"Ce matin, 8 h 05"},"equipe":[{"id":"fatou","nom":"Fatou Sarr","role":"Comptabilité"},{"id":"ibrahima","nom":"Ibrahima Diop","role":"Commercial"},{"id":"awa","nom":"Awa Ba","role":"Logistique"}],"regles":[{"nom":"Les factures fournisseurs partent chez Fatou","si":"Catégorie = Facture ou Banque","alors":"Assigner à Fatou Sarr et notifier par WhatsApp","touches":["e02","e06","e07","e09"]},{"nom":"Toute demande de devis remonte au commercial","si":"Catégorie = Client et action = Répondre","alors":"Assigner à Ibrahima Diop","touches":["e01","e05","e08"]},{"nom":"Les livraisons vont à la logistique","si":"Catégorie = Fournisseur ou expéditeur contient dhl","alors":"Assigner à Awa Ba","touches":["e03","e10","e15"]}],"emails":[{"id":"e01","de":"Cheikh Fall","adresse":"c.fall@senegindia-btp.sn","sujet":"Commande de 240 sacs de ciment, livraison avant vendredi","heure":"07:52","importance":1,"categorie":"Client","resume":"Chantier de Diamniadio à l'arrêt, il lui manque 240 sacs de ciment CEM II. Il demande une confirmation de livraison avant vendredi midi, sinon il commande ailleurs.","action":"REPONDRE","deadline":"Vendredi 12 h","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour Monsieur Ndiaye,\n\nNotre chantier de Diamniadio est bloqué faute de ciment. Il nous faut 240 sacs de CEM II 42,5 livrés sur site avant vendredi 12 h.\n\nPouvez-vous me confirmer la disponibilité et le prix rendu chantier aujourd'hui ? Au delà de vendredi je serai obligé de me tourner vers un autre fournisseur, ce que je préférerais éviter.\n\nCordialement,\nCheikh Fall, SENEGINDIA BTP","reponses":[{"ton":"Confirmer et rassurer","texte":"Bonjour Monsieur Fall,\n\nC'est noté. Les 240 sacs de CEM II 42,5 sont disponibles en stock et je bloque la quantité à votre nom dès maintenant. Livraison sur le chantier de Diamniadio jeudi dans la matinée, donc avant votre échéance de vendredi midi.\n\nJe vous envoie le bon de commande avec le prix rendu chantier dans l'heure.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Confirmer avec une contrepartie","texte":"Bonjour Monsieur Fall,\n\nLes 240 sacs sont disponibles et je peux livrer jeudi matin sur Diamniadio. Compte tenu du volume et de l'urgence, je vous propose le prix rendu chantier contre un règlement à la livraison plutôt qu'à trente jours.\n\nDites-moi si cela vous convient et je lance la préparation immédiatement.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Gagner du temps sans perdre le client","texte":"Bonjour Monsieur Fall,\n\nBien reçu, je traite votre demande en priorité. Je vérifie le stock exact et la disponibilité du camion et je reviens vers vous avant midi avec une date ferme et le prix rendu chantier.\n\nVotre chantier ne restera pas à l'arrêt à cause de nous.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e02","de":"Banque Atlantique","adresse":"notifications@banqueatlantique.sn","sujet":"Prélèvement rejeté sur le compte 0021 4478","heure":"06:14","importance":1,"categorie":"Banque","resume":"Un prélèvement de 1 240 000 FCFA a été rejeté faute de provision sur le compte principal. Des frais de rejet s'appliquent si la situation n'est pas régularisée sous 48 heures.","action":"PAYER","deadline":"Sous 48 heures","sentiment":"NEGATIF","piecesJointes":1,"lu":false,"corps":"Cher client,\n\nNous vous informons qu'un prélèvement d'un montant de 1 240 000 FCFA présenté le 21 août sur votre compte 0021 4478 n'a pas pu être honoré, la provision étant insuffisante.\n\nUne nouvelle présentation aura lieu sous 48 heures. À défaut de provision, des frais de rejet seront appliqués et l'incident sera enregistré.\n\nService clientèle, Banque Atlantique","reponses":[]},{"id":"e03","de":"Ciments du Sahel","adresse":"commercial@cimentsdusahel.sn","sujet":"Hausse tarifaire au 1er septembre, commandes à confirmer avant le 28","heure":"07:31","importance":1,"categorie":"Fournisseur","resume":"Les tarifs augmentent de 6 pour cent au 1er septembre. Toute commande confirmée avant le 28 août reste facturée à l'ancien tarif.","action":"REPONDRE","deadline":"28 août","sentiment":"NEUTRE","piecesJointes":2,"lu":false,"corps":"Bonjour,\n\nNous vous informons d'une revalorisation de nos tarifs de 6 pour cent effective au 1er septembre 2026, liée au coût du fret et de l'énergie.\n\nToute commande fermement confirmée et réglée à l'acompte avant le 28 août sera honorée à l'ancien tarif, y compris pour des livraisons échelonnées jusqu'à fin octobre.\n\nGrille jointe. Bien cordialement,\nDirection commerciale, Ciments du Sahel","reponses":[{"ton":"Sécuriser le stock à l'ancien prix","texte":"Bonjour,\n\nMerci pour l'information. Nous confirmons une commande ferme avant le 28 août et souhaitons profiter de l'ancien tarif sur des livraisons échelonnées jusqu'à fin octobre.\n\nMerci de m'adresser la proforma correspondante ainsi que le montant de l'acompte à régler.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Négocier avant de confirmer","texte":"Bonjour,\n\nMerci pour cette information anticipée. Avant de confirmer, je souhaiterais connaître les conditions applicables à un engagement de volume sur le trimestre, ainsi que les délais de livraison garantis sur Dakar et Diamniadio.\n\nJe reviens vers vous avant le 28 août.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Accuser réception sans s'engager","texte":"Bonjour,\n\nBien reçu, merci pour la grille jointe. J'étudie nos besoins des prochaines semaines et je reviens vers vous avec une commande ferme avant l'échéance du 28 août.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e04","de":"Mairie de Rufisque","adresse":"marches@mairie-rufisque.sn","sujet":"Appel d'offres 2026-14, fourniture de matériaux, dépôt le 3 septembre","heure":"07:05","importance":2,"categorie":"Administration","resume":"Appel d'offres pour la fourniture de matériaux de construction sur trois écoles. Les plis doivent être déposés le 3 septembre à 10 h au plus tard.","action":"REPONDRE","deadline":"3 septembre, 10 h","sentiment":"NEUTRE","piecesJointes":3,"lu":false,"corps":"Madame, Monsieur,\n\nLa commune de Rufisque lance l'appel d'offres 2026-14 relatif à la fourniture de matériaux de construction pour la réhabilitation de trois établissements scolaires.\n\nLe dossier de consultation est joint. Les plis seront reçus jusqu'au 3 septembre 2026 à 10 h précises, à la direction des marchés.\n\nLe service des marchés publics","reponses":[]},{"id":"e05","de":"Hôtel Terrou-Bi","adresse":"achats@terroubi.sn","sujet":"Devis DEV-0912, question sur les délais","heure":"07:19","importance":2,"categorie":"Client","resume":"Le devis DEV-0912 convient sur le prix mais le délai de trois semaines pose problème. Ils demandent si une partie peut être livrée la semaine prochaine.","action":"REPONDRE","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Bonjour,\n\nVotre devis DEV-0912 nous convient sur le plan tarifaire. En revanche, le délai annoncé de trois semaines est trop long pour la rénovation de l'aile nord.\n\nSerait-il possible de livrer une première partie dès la semaine prochaine, quitte à échelonner le reste ?\n\nBien cordialement,\nService achats, Terrou-Bi","reponses":[{"ton":"Livraison en deux fois","texte":"Bonjour,\n\nMerci pour votre retour. Nous pouvons livrer dès mardi prochain la première moitié de la commande, ce qui vous permet de démarrer l'aile nord sans attendre, le solde suivant sous quinze jours.\n\nJe vous adresse un devis rectifié précisant les deux échéances.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Vérifier avant de promettre","texte":"Bonjour,\n\nMerci de votre retour, le point sur les délais est entendu. Je vérifie aujourd'hui ce que nous pouvons sortir du stock dès la semaine prochaine et je vous confirme demain une date ferme pour cette première partie.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Proposer une alternative équivalente","texte":"Bonjour,\n\nLe délai de trois semaines vient d'une référence précise. Nous disposons en stock d'une référence équivalente, de même classe et au même prix, livrable sous quatre jours.\n\nSi vous le souhaitez, je vous fais parvenir la fiche technique pour validation.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e06","de":"SENELEC","adresse":"facturation@senelec.sn","sujet":"Facture d'électricité du mois d'août, 184 500 FCFA","heure":"05:40","importance":2,"categorie":"Facture","resume":"Facture d'électricité du dépôt de 184 500 FCFA. Échéance de paiement au 5 septembre.","action":"PAYER","deadline":"5 septembre","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nVeuillez trouver ci-joint votre facture d'électricité du mois d'août 2026 pour le point de livraison du dépôt, d'un montant de 184 500 FCFA.\n\nDate limite de paiement, le 5 septembre 2026.\n\nSENELEC, service facturation","reponses":[]},{"id":"e07","de":"Cabinet Diagne & Associés","adresse":"m.diagne@cabinet-diagne.sn","sujet":"Déclaration de TVA de juillet à valider","heure":"06:58","importance":2,"categorie":"Facture","resume":"Le comptable a préparé la déclaration de TVA de juillet et attend une validation écrite avant téléchargement. Le dépôt doit avoir lieu avant la fin du mois.","action":"REPONDRE","deadline":"Fin du mois","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour Monsieur Ndiaye,\n\nLa déclaration de TVA du mois de juillet est prête, vous la trouverez en pièce jointe. Le montant à reverser ressort à 612 300 FCFA.\n\nMerci de me confirmer par retour que je peux procéder au téléchargement, le dépôt devant intervenir avant la fin du mois.\n\nBien à vous,\nMamadou Diagne","reponses":[]},{"id":"e08","de":"Résidence Les Almadies","adresse":"syndic@residence-almadies.sn","sujet":"Relance, nous attendons votre retour depuis six jours","heure":"07:44","importance":2,"categorie":"Client","resume":"Le syndic attend depuis six jours une réponse à sa demande de devis pour la reprise des garde-corps. Le ton se tend et une autre entreprise a été consultée.","action":"REPONDRE","deadline":"Aujourd'hui","sentiment":"NEGATIF","piecesJointes":0,"lu":false,"corps":"Bonjour,\n\nNous vous avons sollicités le 16 août pour un devis de reprise des garde-corps de la résidence et sommes toujours sans nouvelles.\n\nNous avons consulté une autre entreprise dans l'intervalle. Si votre proposition ne nous parvient pas cette semaine, nous poursuivrons avec elle.\n\nLe syndic","reponses":[{"ton":"Reconnaître le retard et agir","texte":"Bonjour,\n\nVous avez raison de nous relancer et je vous prie d'excuser ce délai, votre demande du 16 août n'a pas été traitée dans les temps de notre côté.\n\nJe reprends le dossier personnellement aujourd'hui, un mètre passe demain matin sur site et vous recevez le devis complet sous 48 heures.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Reprendre la main avec un engagement daté","texte":"Bonjour,\n\nMerci pour votre relance et désolé pour l'attente. Vous recevrez notre proposition chiffrée pour la reprise des garde-corps avant vendredi 12 h, avec le détail des sections et le délai de pose.\n\nSi vous souhaitez en discuter avant, je suis joignable toute la journée.\n\nCordialement,\nMoussa Ndiaye"},{"ton":"Répondre et se différencier","texte":"Bonjour,\n\nJe vous prie d'excuser ce silence, il ne correspond pas à notre façon de travailler. Notre devis vous parvient sous 48 heures.\n\nIl inclura la dépose de l'existant et l'évacuation, deux postes souvent absents des offres concurrentes et systématiquement facturées en cours de chantier.\n\nCordialement,\nMoussa Ndiaye"}]},{"id":"e09","de":"Orange Sénégal","adresse":"facture-pro@orange.sn","sujet":"Votre facture professionnelle du mois d'août","heure":"04:12","importance":3,"categorie":"Facture","resume":"Facture mensuelle des lignes professionnelles, 47 000 FCFA, prélèvement automatique déjà programmé.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nVotre facture professionnelle du mois d'août est disponible, montant 47 000 FCFA. Le prélèvement automatique interviendra le 28 août, aucune action n'est requise de votre part.\n\nOrange Sénégal","reponses":[]},{"id":"e10","de":"DHL Express","adresse":"noreply@dhl.com","sujet":"Votre colis 4471 2280 a été livré","heure":"06:33","importance":3,"categorie":"Notification","resume":"Le colis 4471 2280 contenant les pièces de rechange a été livré au dépôt et signé par Awa Ba.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Votre envoi 4471 2280 a été livré le 22 août à 06 h 28, signé par A. BA.\n\nDHL Express","reponses":[]},{"id":"e11","de":"Ousmane Kane","adresse":"ousmane.kane88@gmail.com","sujet":"Candidature spontanée, poste de magasinier","heure":"22:47","importance":3,"categorie":"Recrutement","resume":"Candidature spontanée d'un magasinier avec quatre ans d'expérience en dépôt de matériaux. CV joint, disponible immédiatement.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nJe me permets de vous adresser ma candidature spontanée au poste de magasinier. J'ai quatre ans d'expérience en dépôt de matériaux de construction et je suis disponible immédiatement.\n\nVous trouverez mon CV en pièce jointe.\n\nRespectueusement,\nOusmane Kane","reponses":[]},{"id":"e12","de":"Chambre de Commerce de Dakar","adresse":"evenements@cciad.sn","sujet":"Salon du bâtiment, 12 au 14 septembre, invitation exposant","heure":"23:10","importance":3,"categorie":"Administration","resume":"Invitation à exposer au salon du bâtiment de Dakar du 12 au 14 septembre. Les inscriptions exposants ferment le 30 août.","action":"RIEN","deadline":"30 août","sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Madame, Monsieur,\n\nLa Chambre de commerce de Dakar organise le salon du bâtiment du 12 au 14 septembre au CICES. Les inscriptions exposants sont ouvertes jusqu'au 30 août.\n\nProgramme et tarifs en pièce jointe.\n\nLe service événements","reponses":[]},{"id":"e13","de":"Aminata Sow","adresse":"a.sow@groupe-sow.sn","sujet":"Bien reçu, merci","heure":"21:58","importance":3,"categorie":"Client","resume":"Accusé de réception du bon de livraison envoyé hier. Aucune action attendue.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Bonsoir,\n\nJ'ai bien reçu le bon de livraison, tout est conforme. Merci pour la réactivité.\n\nAminata Sow","reponses":[]},{"id":"e14","de":"Wave Business","adresse":"business@wave.com","sujet":"Récapitulatif de vos encaissements de la semaine","heure":"05:02","importance":3,"categorie":"Banque","resume":"Récapitulatif hebdomadaire des encaissements Wave, 3 470 000 FCFA sur 41 transactions.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":0,"lu":false,"corps":"Bonjour,\n\nVoici le récapitulatif de vos encaissements de la semaine du 15 au 21 août, 3 470 000 FCFA pour 41 transactions.\n\nWave Business","reponses":[]},{"id":"e15","de":"Quincaillerie du Fleuve","adresse":"ventes@quincaillerie-fleuve.sn","sujet":"Notre nouveau catalogue outillage est disponible","heure":"20:33","importance":3,"categorie":"Fournisseur","resume":"Envoi du catalogue outillage de la rentrée avec les nouvelles conditions revendeur. Aucune échéance.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nNotre catalogue outillage de la rentrée est disponible en pièce jointe, avec les conditions revendeur mises à jour.\n\nL'équipe commerciale","reponses":[]},{"id":"e16","de":"AXA Sénégal","adresse":"clients@axa.sn","sujet":"Attestation de flotte automobile renouvelée","heure":"04:48","importance":3,"categorie":"Administration","resume":"L'attestation d'assurance de la flotte a été renouvelée jusqu'au 31 août 2027 et est jointe au message.","action":"RIEN","deadline":null,"sentiment":"POSITIF","piecesJointes":1,"lu":false,"corps":"Bonjour,\n\nVotre contrat de flotte automobile a été renouvelé. L'attestation valable jusqu'au 31 août 2027 est jointe à ce message.\n\nAXA Sénégal","reponses":[]},{"id":"e17","de":"LinkedIn","adresse":"news@linkedin.com","sujet":"18 nouvelles offres correspondent à votre profil","heure":"03:21","importance":4,"categorie":"Publicité","resume":"Notification automatique d'offres d'emploi. Sans lien avec l'activité.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Découvrez les 18 nouvelles offres qui correspondent à votre profil.","reponses":[]},{"id":"e18","de":"Boostez votre visibilité","adresse":"contact@visibilite-pro-afrique.com","sujet":"Votre entreprise mérite d'être en première page","heure":"02:55","importance":4,"categorie":"Publicité","resume":"Démarchage commercial pour du référencement. Aucune relation d'affaires existante.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Bonjour, votre entreprise mérite d'être en première page de Google. Nos forfaits démarrent à 29 euros par mois.","reponses":[]},{"id":"e19","de":"Jumia Business","adresse":"newsletter@jumia.sn","sujet":"Les meilleures affaires de la semaine pour votre bureau","heure":"02:10","importance":4,"categorie":"Publicité","resume":"Newsletter promotionnelle hebdomadaire.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Les meilleures affaires de la semaine pour équiper votre bureau.","reponses":[]},{"id":"e20","de":"Webinaires Pro","adresse":"invitations@webinaires-pro.net","sujet":"Webinaire gratuit, doublez votre chiffre d'affaires en 90 jours","heure":"01:44","importance":4,"categorie":"Publicité","resume":"Invitation à un webinaire commercial non sollicité.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Inscrivez-vous gratuitement à notre webinaire, places limitées.","reponses":[]},{"id":"e21","de":"Google Agenda","adresse":"calendar-notification@google.com","sujet":"Rappel, point équipe à 9 h","heure":"01:00","importance":4,"categorie":"Notification","resume":"Rappel automatique d'un événement déjà présent dans l'agenda.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Rappel, point équipe aujourd'hui à 9 h.","reponses":[]},{"id":"e22","de":"Imprimerie Teranga","adresse":"promo@imprimerie-teranga.sn","sujet":"Moins 30 pour cent sur vos supports de communication","heure":"00:38","importance":4,"categorie":"Publicité","resume":"Offre promotionnelle d'un imprimeur, sans commande en cours.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Profitez de moins 30 pour cent sur vos cartes de visite et flyers jusqu'à la fin du mois.","reponses":[]},{"id":"e23","de":"BTP Afrique Hebdo","adresse":"lettre@btpafrique.com","sujet":"La lettre du BTP, numéro 214","heure":"00:12","importance":4,"categorie":"Publicité","resume":"Lettre d'information sectorielle hebdomadaire.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Au sommaire cette semaine, les prix des matériaux et les grands chantiers de la sous-région.","reponses":[]},{"id":"e24","de":"Facebook","adresse":"notification@facebookmail.com","sujet":"Votre page a 4 nouveaux avis","heure":"23:31","importance":4,"categorie":"Notification","resume":"Notification automatique d'un réseau social.","action":"RIEN","deadline":null,"sentiment":"NEUTRE","piecesJointes":0,"lu":false,"corps":"Votre page a reçu 4 nouveaux avis cette semaine.","reponses":[]}]}</script>
 <script>
 (function(){
   "use strict";
@@ -419,7 +419,7 @@ a{color:var(--green-deep)}
   function libelleImportance(n){ return (IMPORTANCES[n] || IMPORTANCES[3]).label; }
 
   var ACTIONS = {
-    REPONDRE:"Repondre", PAYER:"Payer", RAPPELER:"Rappeler", RIEN:"Rien a faire"
+    REPONDRE:"Répondre", PAYER:"Payer", RAPPELER:"Rappeler", RIEN:"Rien à faire"
   };
 
   var AVATARS = ["#8FA9C4","#C4A88F","#9CB79C","#C09BA8","#A79CC4","#C4BC8F","#8FBDC4","#B8A0B8"];
@@ -466,7 +466,7 @@ a{color:var(--green-deep)}
   /* --------- filtres, definis une seule fois et partages par les onglets et la liste --------- */
   var FILTRES = [
     { id:"tous", libelle:"Tous", test:function(){ return true; } },
-    { id:"atraiter", libelle:"A traiter", test:function(e){ return aTraiter(e); } },
+    { id:"atraiter", libelle:"À traiter", test:function(e){ return aTraiter(e); } },
     { id:"i1", libelle:"Urgent", test:function(e){ return e.importance === 1; } },
     { id:"i2", libelle:"Important", test:function(e){ return e.importance === 2; } },
     { id:"i3", libelle:"Normal", test:function(e){ return e.importance === 3; } },
@@ -521,15 +521,15 @@ a{color:var(--green-deep)}
     if (!etat.trie) {
       var c = el("div","chiffre");
       c.appendChild(Object.assign(el("div","val tabnum", String(emails.length)), {}));
-      c.appendChild(el("div","lib","emails recus, tous au meme niveau"));
+      c.appendChild(el("div","lib","emails reçus, tous au même niveau"));
       zone.appendChild(c);
       return;
     }
     var stats = [
       { val: compter(function(e){ return e.importance === 1; }), lib:"urgents, argent ou client en jeu", accent:true },
-      { val: compter(function(e){ return e.importance === 2; }), lib:"importants, une reponse est attendue" },
+      { val: compter(function(e){ return e.importance === 2; }), lib:"importants, une réponse est attendue" },
       { val: compter(function(e){ return e.action === "RIEN"; }), lib:"ne demandent rien de vous" },
-      { val: emails.length, lib:"emails recus depuis hier soir" }
+      { val: emails.length, lib:"emails reçus depuis hier soir" }
     ];
     stats.forEach(function(s){
       var c = el("div","chiffre" + (s.accent ? " accent" : ""));
@@ -592,13 +592,13 @@ a{color:var(--green-deep)}
       /* L'etat vide de la file "A traiter" n'est pas un manque, c'est la recompense :
          l'ecran se calme quand il n'y a plus rien pour vous (charte 5.4 et 5.7). */
       if (etat.filtre === "atraiter") {
-        v.appendChild(el("h2",null,"Votre matinee est faite"));
+        v.appendChild(el("h2",null,"Votre matinée est faite"));
         v.appendChild(el("p",null,"Plus rien n'attend une action de votre part. Les autres emails sont ranges et consultables quand vous le voulez."));
       } else {
-        v.appendChild(el("h2",null,"Rien dans cette categorie"));
-        v.appendChild(el("p",null,"Aucun email ne correspond a ce filtre ce matin. Revenez a l'onglet Tous pour voir la boite complete."));
+        v.appendChild(el("h2",null,"Rien dans cette catégorie"));
+        v.appendChild(el("p",null,"Aucun email ne correspond à ce filtre ce matin. Revenez à l'onglet Tous pour voir la boîte complète."));
       }
-      var b = el("button","btn btn-primaire","Revenir a tous les emails");
+      var b = el("button","btn btn-primaire","Revenir à tous les emails");
       b.type = "button";
       b.addEventListener("click", function(){ etat.filtre = "tous"; rendre(); });
       v.appendChild(b);
@@ -629,10 +629,10 @@ a{color:var(--green-deep)}
           bs.appendChild(badge("badge-" + e.importance, libelleImportance(e.importance)));
         }
         bs.appendChild(badge("badge-theme", e.categorie));
-        if (e.repondu) { bs.appendChild(badge("badge-repondu","Repondu")); }
-        else if (aTraiter(e)) { bs.appendChild(badge("badge-etat","A repondre")); }
+        if (e.repondu) { bs.appendChild(badge("badge-repondu","Répondu")); }
+        else if (aTraiter(e)) { bs.appendChild(badge("badge-etat","À répondre")); }
         if (e.piecesJointes > 0) {
-          bs.appendChild(badge("badge-pj", e.piecesJointes + (e.piecesJointes > 1 ? " pieces jointes" : " piece jointe")));
+          bs.appendChild(badge("badge-pj", e.piecesJointes + (e.piecesJointes > 1 ? " pièces jointes" : " pièce jointe")));
         }
         corps.appendChild(bs);
       }
@@ -646,13 +646,13 @@ a{color:var(--green-deep)}
     var sous = document.getElementById("sous-boite");
     var titre = document.getElementById("titre-boite");
     if (etat.trie) {
-      titre.textContent = "Boite du jour, triee";
-      sous.textContent = D.entreprise.jour + ". Sur " + emails.length + " emails recus, "
+      titre.textContent = "Boîte du jour, triée";
+      sous.textContent = D.entreprise.jour + ". Sur " + emails.length + " emails reçus, "
         + compter(aTraiter) + " attendent encore quelque chose de vous.";
     } else {
-      titre.textContent = "Boite du jour, telle qu'elle arrive";
+      titre.textContent = "Boîte du jour, telle qu'elle arrive";
       sous.textContent = D.entreprise.jour + ". " + emails.length
-        + " emails dans l'ordre d'arrivee, sans resume, sans importance, sans categorie. Comme aujourd'hui.";
+        + " emails dans l'ordre d'arrivée, sans résumé, sans importance, sans catégorie. Comme aujourd'hui.";
     }
     document.getElementById("bascule-sans").setAttribute("aria-pressed", String(!etat.trie));
     document.getElementById("bascule-avec").setAttribute("aria-pressed", String(etat.trie));
@@ -672,15 +672,15 @@ a{color:var(--green-deep)}
     /* Sur la page de detail, TOUS les niveaux portent un badge, y compris les calmes. */
     bs.appendChild(badge("badge-" + e.importance, libelleImportance(e.importance)));
     bs.appendChild(badge("badge-theme", e.categorie));
-    if (e.repondu) bs.appendChild(badge("badge-repondu","Repondu"));
+    if (e.repondu) bs.appendChild(badge("badge-repondu","Répondu"));
 
     var fiche = document.getElementById("detail-fiche");
     vider(fiche);
     var items = [
       ["Importance", libelleImportance(e.importance)],
-      ["Categorie", e.categorie],
+      ["Catégorie", e.categorie],
       ["Action attendue", ACTIONS[e.action]],
-      ["Echeance", e.deadline || "Aucune"]
+      ["Échéance", e.deadline || "Aucune"]
     ];
     items.forEach(function(it){
       var d = el("div","item");
@@ -712,8 +712,8 @@ a{color:var(--green-deep)}
     var conf = document.getElementById("confirmation");
     if (e.repondu) {
       conf.hidden = false;
-      conf.textContent = "Reponse envoyee a " + e.de + ". Cet email est sorti de votre liste a traiter"
-        + (e.assigne ? " et " + e.assigne + " a ete prevenu." : ".");
+      conf.textContent = "Réponse envoyée à " + e.de + ". Cet email est sorti de votre liste à traiter"
+        + (e.assigne ? " et " + e.assigne + " a été prévenu." : ".");
     } else if (!conf.dataset.libre) {
       conf.hidden = true;
       conf.textContent = "";
@@ -728,7 +728,7 @@ a{color:var(--green-deep)}
     var lignes = [];
     lignes.push("Bonjour " + D.entreprise.patron.split(" ")[0] + ", voici votre matin.");
     lignes.push("");
-    lignes.push(emails.length + " emails recus depuis hier soir. " + compter(aTraiter) + " attendent une action.");
+    lignes.push(emails.length + " emails reçus depuis hier soir. " + compter(aTraiter) + " attendent une action.");
     lignes.push("");
     lignes.push("URGENT (" + urgents.length + ")");
     urgents.forEach(function(e){
@@ -740,7 +740,7 @@ a{color:var(--green-deep)}
       lignes.push("- " + e.de + " : " + ACTIONS[e.action].toLowerCase() + (e.deadline ? ", " + e.deadline : ""));
     });
     lignes.push("");
-    lignes.push(calmes + " autres emails ne demandent rien, ils sont ranges et vous attendent si besoin.");
+    lignes.push(calmes + " autres emails ne demandent rien, ils sont rangés et vous attendent si besoin.");
     document.getElementById("texte-briefing").textContent = lignes.join("\n");
   }
 
@@ -757,17 +757,17 @@ a{color:var(--green-deep)}
       c.appendChild(document.createTextNode(r.alors + "."));
       d.appendChild(c);
       var n = r.touches.length;
-      d.appendChild(el("div","cond", "Ce matin, cette regle a traite " + n
-        + (n > 1 ? " emails sans vous deranger." : " email sans vous deranger.")));
+      d.appendChild(el("div","cond", "Ce matin, cette règle a traité " + n
+        + (n > 1 ? " emails sans vous déranger." : " email sans vous déranger.")));
       zone.appendChild(d);
     });
   }
 
   /* --------------------------- navigation --------------------------- */
   var VUES = [
-    { id:"boite", libelle:"Boite triee", section:"vue-boite" },
+    { id:"boite", libelle:"Boîte triée", section:"vue-boite" },
     { id:"briefing", libelle:"Briefing 8 h", section:"vue-briefing" },
-    { id:"regles", libelle:"Regles", section:"vue-regles" },
+    { id:"regles", libelle:"Règles", section:"vue-regles" },
     { id:"detail", libelle:null, section:"vue-detail" }
   ];
 
@@ -846,7 +846,7 @@ a{color:var(--green-deep)}
     if (texte.length === 0) {
       conf.hidden = false;
       conf.dataset.libre = "1";
-      conf.textContent = "Choisissez une reponse proposee ou ecrivez la votre avant d'envoyer.";
+      conf.textContent = "Choisissez une réponse proposée ou écrivez la vôtre avant d'envoyer.";
       return;
     }
     delete conf.dataset.libre;
@@ -860,8 +860,8 @@ a{color:var(--green-deep)}
     var conf = document.getElementById("confirmation");
     conf.hidden = false;
     conf.dataset.libre = "1";
-    conf.textContent = "Dans la version reelle, cet email part sur le WhatsApp de la personne concernee, "
-      + "resume et pieces jointes comprises. Ici, rien n'est envoye, c'est une demonstration.";
+    conf.textContent = "Dans la version réelle, cet email part sur le WhatsApp de la personne concernée, "
+      + "résumé et pièces jointes comprises. Ici, rien n'est envoyé, c'est une démonstration.";
   });
 
   document.getElementById("btn-assigner").addEventListener("click", function(){
@@ -881,8 +881,8 @@ a{color:var(--green-deep)}
     var conf = document.getElementById("confirmation");
     conf.hidden = false;
     conf.dataset.libre = "1";
-    conf.textContent = "Assigne a " + qui.nom + ", " + qui.role.toLowerCase()
-      + ". Elle ou il recoit l'email, le resume et l'echeance, et vous voyez ou en est le dossier.";
+    conf.textContent = "Assigné à " + qui.nom + ", " + qui.role.toLowerCase()
+      + ". Elle ou il reçoit l'email, le résumé et l'échéance, et vous voyez où en est le dossier.";
     rendreMenus();
   });
 

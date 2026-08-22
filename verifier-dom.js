@@ -19,6 +19,11 @@ const fs = require("fs");
 const path = require("path");
 const { JSDOM, VirtualConsole } = require("jsdom");
 
+/* Les controles de contenu cherchent une idee, pas une graphie : depuis que la page
+   est accentuee, un motif ecrit sans accent ne mordrait plus (lecon 15). Les controles
+   d'ACCENTS, eux, lisent le texte tel quel et ne passent jamais par ici. */
+const { sansAccent } = require("./accents.js");
+
 const RACINE = __dirname;
 const CHEMIN_GABARIT = path.join(RACINE, "demo.gabarit.html");
 const CHEMIN_DONNEES = path.join(RACINE, "data", "boite-fictive.json");
@@ -202,8 +207,8 @@ function piloter(html, donnees) {
   egal($("#vue-boite").hidden, false, "Le retour a la boite doit reafficher la boite");
   const ligneApres = $$("#liste .ligne").find((n) => n.dataset.email === cible.id);
   ok(!!ligneApres, "L'email repondu reste consultable dans la boite");
-  ok(ligneApres.textContent.indexOf("Repondu") !== -1, "L'email repondu doit porter le badge Repondu");
-  ok(ligneApres.textContent.indexOf("A repondre") === -1, "L'email repondu ne doit plus reclamer une reponse");
+  ok(sansAccent(ligneApres.textContent).indexOf("Repondu") !== -1, "L'email repondu doit porter le badge Repondu");
+  ok(sansAccent(ligneApres.textContent).indexOf("A repondre") === -1, "L'email repondu ne doit plus reclamer une reponse");
   const sujetsPrio = $$("#grille-prio .carte-prio .sujet-prio").map((n) => n.textContent);
   ok(sujetsPrio.indexOf(cible.sujet) === -1, "L'email repondu doit sortir du bandeau prioritaire");
 
@@ -217,17 +222,17 @@ function piloter(html, donnees) {
   });
   egal(api.compter(api.aTraiter), 0, "Toute la file doit avoir ete traitee");
   api.allerA("boite");
-  const ongletFile = $$("#onglets .onglet").find((b) => b.textContent.indexOf("A traiter") === 0);
+  const ongletFile = $$("#onglets .onglet").find((b) => sansAccent(b.textContent).indexOf("A traiter") === 0);
   ok(!!ongletFile, "Un onglet A traiter doit exister");
   egal(Number(ongletFile.querySelector(".pastille-cpt").textContent), 0,
     "Le compteur A traiter doit tomber a zero");
   egal($("#prioritaires").hidden, true, "Le bandeau prioritaire doit disparaitre quand tout est traite");
   clic(ongletFile, w);
-  const ongletFileApres = $$("#onglets .onglet").find((b) => b.textContent.indexOf("A traiter") === 0);
+  const ongletFileApres = $$("#onglets .onglet").find((b) => sansAccent(b.textContent).indexOf("A traiter") === 0);
   egal(ongletFileApres.getAttribute("aria-selected"), "true", "L'onglet A traiter doit etre selectionne avant d'etre teste");
   egal($$("#liste .ligne").length, 0, "La file A traiter doit etre vide");
   egal($$("#liste .vide").length, 1, "Un etat vide doit s'afficher");
-  ok(/matinee est faite/i.test($("#liste .vide").textContent),
+  ok(/matinee est faite/i.test(sansAccent($("#liste .vide").textContent)),
     "L'etat vide de la file doit etre une recompense, pas un cul-de-sac");
   ok($("#liste .vide button") !== null, "L'etat vide doit proposer l'action suivante");
 
@@ -258,6 +263,62 @@ function piloter(html, donnees) {
     ok(/^https?:/.test(a.getAttribute("href")), "Le chemin de retour " + a.id + " doit etre une vraie adresse");
     ok(a.textContent.trim().length >= 10, "Le chemin de retour " + a.id + " doit porter un libelle explicite");
     ok(/\bbtn\b|\bretour\b/.test(a.className), "Le chemin de retour " + a.id + " doit etre un bouton");
+  });
+
+  /* --- 9 bis. Accents du texte REELLEMENT AFFICHE ---------------- */
+  /* Ce produit vend la comprehension du francais professionnel. Une page ecrite sans
+     accents detruit l'argument avant la premiere fonction. Aucun des 923 controles de
+     source ne pouvait le voir : ils cherchent des idees, pas des graphies.
+     On balaye donc un vocabulaire de mots qui, en francais correct, ne s'ecrivent
+     JAMAIS sans accent, applique au textContent de chaque vue, c'est a dire a ce que
+     le prospect lit. textContent et non innerText : hors ecran, content-visibility
+     rend innerText vide et le controle deviendrait muet (lecon 45). */
+  /* Le vocabulaire est ecrit en francais CORRECT, et le radical a chercher en est
+     DERIVE : il s'arrete apres le dernier caractere accente. Ecrire les radicaux a la
+     main est exactement ce qui a failli rendre ce controle inerte : "publicit" est un
+     prefixe de "publicite" ET de "publicité", il aurait donc mordu sur les deux, donc
+     sur rien. La derivation supprime la classe entiere, et l'auto-test plus bas prouve
+     que chaque radical distingue vraiment les deux graphies (lecon 39, casser la sonde
+     avant de la croire). */
+  const { radicaux, MOTS_COURTS, motifCourt } = require("./accents.js");
+  const RADICAUX = radicaux();
+  RADICAUX.forEach((r) => {
+    ok(r.radical.length >= 3 && r.mot.indexOf(r.radical) === -1,
+      "Radical d'accent non discriminant : \"" + r.radical + "\" pour \"" + r.mot + "\"");
+  });
+
+
+  /* textContent du body inclut le CODE des balises script, donc les identifiants du
+     produit (apercu, expediteur, regle...). Les lire comme du texte affiche fabriquerait
+     des faux rouges en masse, et un faux rouge finit toujours par etre desactive
+     (lecon 28). On clone, on retire script et style, puis on mesure. */
+  function texteAffiche(selecteur) {
+    const n = $(selecteur);
+    if (!n) return "";
+    const c = n.cloneNode(true);
+    Array.from(c.querySelectorAll("script,style")).forEach((x) => x.remove());
+    return c.textContent;
+  }
+  const CHROME = ".bandeau";
+  const vues = [];
+  ["boite", "briefing", "regles"].forEach((v) => {
+    api.allerA(v);
+    vues.push([v, texteAffiche("#vue-" + v) + " " + texteAffiche(CHROME)]);
+  });
+  api.ouvrir(emailsRef[0].id);
+  vues.push(["detail", texteAffiche("#vue-detail")]);
+  api.allerA("boite");
+
+  vues.forEach(([nom, texte]) => {
+    const t = texte.toLowerCase();
+    RADICAUX.forEach((r) => {
+      ok(t.indexOf(r.radical) === -1,
+        "Mot sans accent visible dans la vue " + nom + " : \"" + r.radical + "\" (" + r.mot + ")");
+    });
+    MOTS_COURTS.forEach((m) => {
+      ok(!motifCourt(m).test(texte),
+        "Mot sans accent visible dans la vue " + nom + " : \"" + m + "\"");
+    });
   });
 
   /* --- 9. Navigation mobile ------------------------------------- */
@@ -297,8 +358,8 @@ const MUTATIONS = [
   },
   {
     nom: "Le badge Repondu n'est plus pose",
-    muter: (g) => g.replace("if (e.repondu) { bs.appendChild(badge(\"badge-repondu\",\"Repondu\")); }\n        else if (aTraiter(e))",
-      "if (false) { bs.appendChild(badge(\"badge-repondu\",\"Repondu\")); }\n        else if (aTraiter(e))")
+    muter: (g) => g.replace("if (e.repondu) { bs.appendChild(badge(\"badge-repondu\",\"Répondu\")); }\n        else if (aTraiter(e))",
+      "if (false) { bs.appendChild(badge(\"badge-repondu\",\"Répondu\")); }\n        else if (aTraiter(e))")
   },
   {
     nom: "Les niveaux calmes se mettent a porter un badge (bruit visuel, charte 2.4)",
@@ -330,8 +391,8 @@ const MUTATIONS = [
   },
   {
     nom: "L'assignation nomme n'importe qui",
-    muter: (g) => g.replace("conf.textContent = \"Assigne a \" + qui.nom + \", \" + qui.role.toLowerCase()",
-      "conf.textContent = \"Assigne a un collaborateur\" + (\"\")")
+    muter: (g) => g.replace("conf.textContent = \"Assigné à \" + qui.nom + \", \" + qui.role.toLowerCase()",
+      "conf.textContent = \"Assigné à un collaborateur\" + (\"\")")
   },
   {
     nom: "Un code interne P1 ressort dans la fiche de detail",
@@ -345,8 +406,20 @@ const MUTATIONS = [
   },
   {
     nom: "L'etat vide de la file redevient un cul-de-sac (lecon 20)",
-    muter: (g) => g.replace("v.appendChild(el(\"h2\",null,\"Votre matinee est faite\"));",
+    muter: (g) => g.replace("v.appendChild(el(\"h2\",null,\"Votre matinée est faite\"));",
       "v.appendChild(el(\"h2\",null,\"Rien ici\"));")
+  },
+  /* Sans ces deux mutations, le controle d'accents pourrait etre inerte et personne
+     ne le saurait : c'est le defaut EXACT que ce cycle repare, il doit donc etre
+     re-detectable a volonte, dans un libelle du gabarit comme dans un libelle
+     construit en JavaScript. */
+  {
+    nom: "Un titre visible perd ses accents (Reponses proposees)",
+    muter: (g) => g.replace("<h2>Réponses proposées</h2>", "<h2>Reponses proposees</h2>")
+  },
+  {
+    nom: "Un libelle construit en JavaScript perd ses accents (Boite du jour, triee)",
+    muter: (g) => g.replace("\"Boîte du jour, triée\"", "\"Boite du jour, triee\"")
   },
   {
     nom: "TEMOIN INERTE, une variable interne est renommee",

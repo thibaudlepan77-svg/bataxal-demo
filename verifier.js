@@ -27,6 +27,13 @@ const CHEMIN_DONNEES = path.join(RACINE, "data", "boite-fictive.json");
 const CHEMIN_GABARIT = path.join(RACINE, "demo.gabarit.html");
 const CHEMIN_DEMO = path.join(RACINE, "index.html");
 
+/* Les controles de CONTENU cherchent une idee, pas une graphie. Depuis que la page est
+   accentuee, un motif ecrit sans accent ne mordrait plus, et le reflexe de recopier
+   l'accent dans chaque motif rendrait le harnais cassant pour rien (lecon 15 : matcher
+   le radical, sans accent, trop large plutot que trop etroit). Les controles d'ACCENTS,
+   eux, travaillent sur le texte tel quel : ils sont les seuls a ne pas passer par ici. */
+const { sansAccent, radicaux, MOTS_COURTS, motifCourt } = require("./accents.js");
+
 const IMPORTANCES = { 1: "Urgent", 2: "Important", 3: "Normal", 4: "Faible" };
 const ACTIONS = ["REPONDRE", "PAYER", "RAPPELER", "RIEN"];
 
@@ -183,6 +190,28 @@ function controler(donnees, gabarit, demo) {
     ok(!/[\u{1F300}-\u{1FAFF}\u{2600}-\u{27BF}]/u.test(t), "Emoji interdit dans l'interface (index " + i + ")");
   });
 
+  /* --- 5 bis. Accents du francais professionnel ------------------ */
+  /* La demonstration vend la comprehension du francais : un texte que le produit
+     lui-meme n'aurait pas su ecrire detruit l'argument avant la premiere fonction.
+     Ici on couvre les DONNEES et le texte statique du gabarit ; verifier-dom.js
+     couvre en plus les libelles construits en JavaScript, sur la page rendue. */
+  const RADICAUX = radicaux();
+  RADICAUX.forEach((r) => {
+    ok(r.radical.length >= 3 && r.mot.indexOf(r.radical) === -1,
+      "Radical d'accent non discriminant : \"" + r.radical + "\" pour \"" + r.mot + "\"");
+  });
+  textesVisibles.forEach((t, i) => {
+    const bas = String(t).toLowerCase();
+    RADICAUX.forEach((r) => {
+      ok(bas.indexOf(r.radical) === -1,
+        "Mot sans accent dans un texte affiche (index " + i + ") : \"" + r.radical + "\" (" + r.mot + ")");
+    });
+    MOTS_COURTS.forEach((m) => {
+      ok(!motifCourt(m).test(String(t)),
+        "Mot sans accent dans un texte affiche (index " + i + ") : \"" + m + "\"");
+    });
+  });
+
   /* --- 6. Honnetete de la demonstration -------------------------- */
   /* Le bandeau doit dire trois choses : c'est fictif, aucune boite n'est connectee,
      les analyses sont pre-etablies. Omettre la troisieme serait laisser croire qu'un
@@ -190,10 +219,10 @@ function controler(donnees, gabarit, demo) {
   const bandeau = (gabarit.match(/id="texte-bandeau">([^<]*)</) || [, ""])[1];
   ok(/fictif/i.test(bandeau), "Le bandeau doit dire que les donnees sont fictives");
   ok(/aucun compte|aucune connexion/i.test(bandeau), "Le bandeau doit dire qu'aucune boite n'est connectee");
-  ok(/a l'avance|pre-?etabli|produites a l'avance/i.test(bandeau),
+  ok(/a l'avance|pre-?etabli/i.test(sansAccent(bandeau)),
     "Le bandeau doit dire que les analyses ont ete produites a l'avance");
   /* Le bouton WhatsApp de la demonstration doit dire qu'il n'envoie rien. */
-  ok(/rien n'est envoye/i.test(gabarit),
+  ok(/rien n'est envoye/i.test(sansAccent(gabarit)),
     "L'action WhatsApp doit annoncer qu'elle n'envoie rien dans la demonstration");
 
   /* Une affirmation VRAIE aujourd'hui et INVERIFIABLE demain est un mensonge a retardement :
@@ -210,7 +239,7 @@ function controler(donnees, gabarit, demo) {
     ok(!new RegExp(motif, "i").test(demo),
       "Affirmation perissable et invisible aux tests dans la demonstration : " + motif);
   });
-  ok(/deploye en production/i.test(demo),
+  ok(/deploye en production/i.test(sansAccent(demo)),
     "Le pied doit porter l'affirmation verifiable : le produit reel est deploye en production");
 
   /* --- 7. Chemin de retour, lecons 20 et 40 ---------------------- */
@@ -422,6 +451,18 @@ const MUTATIONS = [
     nom: "Un code interne P1 ressort dans un texte visible",
     muter: (d) => { d.emails[0].resume = "Classe P1 par le moteur. " + d.emails[0].resume; }
   },
+  /* Le controle d'accents doit pouvoir virer au rouge a volonte, cote DONNEES comme
+     cote source : c'est le defaut exact que ce cycle repare. */
+  {
+    nom: "Un resume de la boite perd ses accents",
+    muter: (d) => {
+      d.emails[0].resume = d.emails[0].resume.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    }
+  },
+  {
+    nom: "Un titre du gabarit perd ses accents (Vos regles de routage)",
+    muterSource: (g) => g.replace("<h1>Vos règles de routage</h1>", "<h1>Vos regles de routage</h1>")
+  },
   {
     nom: "Un emoji entre dans l'interface produit",
     muter: (d) => { d.emails[0].sujet = d.emails[0].sujet + " \u{1F525}"; }
@@ -429,7 +470,7 @@ const MUTATIONS = [
   {
     nom: "Le bandeau cesse de dire que les analyses sont pre-etablies",
     muterSource: (g) => g.replace(
-      "Les analyses affichees ont ete produites a l'avance pour cette demonstration.", "")
+      "Les analyses affichées ont été produites à l'avance pour cette démonstration.", "")
   },
   {
     nom: "og:image redevient une adresse relative (aucun agregateur ne la resout)",
@@ -453,8 +494,8 @@ const MUTATIONS = [
   },
   {
     nom: "La grille de prix est recopiee dans la demonstration, deuxieme verite a maintenir",
-    muterSource: (g) => g.replace("<span class=\"pastille\">Demonstration</span>",
-      "<span class=\"pastille\">Demonstration</span><span class=\"txt\">51 000 FCFA par mois</span>")
+    muterSource: (g) => g.replace("<span class=\"pastille\">Démonstration</span>",
+      "<span class=\"pastille\">Démonstration</span><span class=\"txt\">51 000 FCFA par mois</span>")
   },
   {
     nom: "og:url pointe vers un AUTRE artefact de la maison",
@@ -471,12 +512,12 @@ const MUTATIONS = [
   {
     nom: "Une affirmation perissable revient dans le pied (client pilote)",
     muterSource: (g) => g.replace(
-      "Le produit reel est deploye en production.",
-      "Version reelle en service chez un client pilote.")
+      "Le produit réel est déployé en production.",
+      "Version réelle en service chez un client pilote.")
   },
   {
     nom: "Le pied perd son affirmation verifiable",
-    muterSource: (g) => g.replace("Le produit reel est deploye en production.", "")
+    muterSource: (g) => g.replace("Le produit réel est déployé en production.", "")
   },
   {
     nom: "Un numero de contact de gabarit repart en production",

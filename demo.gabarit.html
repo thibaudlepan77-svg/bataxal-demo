@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Bataxal, demonstration : votre boite mail triee par l'IA</title>
-<meta name="description" content="Demonstration publique de Bataxal. 24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses proposees. Aucun compte, aucune connexion a votre boite.">
+<title>Bataxal, démonstration : votre boîte mail triée par l'IA</title>
+<meta name="description" content="Démonstration publique de Bataxal. 24 emails d'une PME de Dakar, triés par importance, résumés en deux phrases, avec les réponses proposées. Aucun compte, aucune connexion à votre boîte.">
 <!-- Carte d'apercu. Ce lien se partage d'abord sur WhatsApp : sans ces balises il se colle
      en URL nue, ce qui ressemble a du spam et fait perdre le clic avant la demonstration. -->
 <link rel="canonical" href="https://thibaudlepan77-svg.github.io/bataxal-demo/">
@@ -12,15 +12,15 @@
 <meta property="og:url" content="https://thibaudlepan77-svg.github.io/bataxal-demo/">
 <meta property="og:site_name" content="Jaayleer">
 <meta property="og:locale" content="fr_SN">
-<meta property="og:title" content="Bataxal : votre boite mail triee par l'IA, en une minute">
-<meta property="og:description" content="24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses deja redigees. Demonstration a ouvrir sans compte.">
+<meta property="og:title" content="Bataxal : votre boîte mail triée par l'IA, en une minute">
+<meta property="og:description" content="24 emails d'une PME de Dakar, triés par importance, résumés en deux phrases, avec les réponses déjà rédigées. Démonstration à ouvrir sans compte.">
 <meta property="og:image" content="https://thibaudlepan77-svg.github.io/bataxal-demo/apercu.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Bataxal, la boite du jour triee : 3 urgents, 5 importants, 16 qui ne demandent rien.">
+<meta property="og:image:alt" content="Bataxal, la boîte du jour triée : 3 urgents, 5 importants, 16 qui ne demandent rien.">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bataxal : votre boite mail triee par l'IA, en une minute">
-<meta name="twitter:description" content="24 emails d'une PME de Dakar, tries par importance, resumes en deux phrases, avec les reponses deja redigees. Demonstration a ouvrir sans compte.">
+<meta name="twitter:title" content="Bataxal : votre boîte mail triée par l'IA, en une minute">
+<meta name="twitter:description" content="24 emails d'une PME de Dakar, triés par importance, résumés en deux phrases, avec les réponses déjà rédigées. Démonstration à ouvrir sans compte.">
 <meta name="twitter:image" content="https://thibaudlepan77-svg.github.io/bataxal-demo/apercu.png">
 <style>
 :root{
@@ -256,11 +256,11 @@ a{color:var(--green-deep)}
 </head>
 <body>
 
-<div class="bandeau" role="region" aria-label="A propos de cette demonstration">
-  <span class="pastille">Demonstration</span>
-  <span class="txt" id="texte-bandeau">Entreprise et emails fictifs. Aucune connexion a votre boite, aucun compte a creer. Les analyses affichees ont ete produites a l'avance pour cette demonstration.</span>
+<div class="bandeau" role="region" aria-label="À propos de cette démonstration">
+  <span class="pastille">Démonstration</span>
+  <span class="txt" id="texte-bandeau">Entreprise et emails fictifs. Aucune connexion à votre boîte, aucun compte à créer. Les analyses affichées ont été produites à l'avance pour cette démonstration.</span>
   <span class="actions-bandeau">
-    <a class="retour" id="lien-retour" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Parler a un humain</a>
+    <a class="retour" id="lien-retour" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20d%C3%A9monstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20bo%C3%AEte%20mail.">Parler à un humain</a>
     <a class="retour offre" id="lien-offre" href="https://thibaudlepan77-svg.github.io/bataxal/">Voir les prix</a>
   </span>
 </div>
@@ -286,7 +286,7 @@ a{color:var(--green-deep)}
     </div>
     <div class="menu" id="menu-bureau"></div>
     <div class="pied">
-      Demonstration a donnees fictives.<br>Le produit reel est deploye en production.
+      Démonstration à données fictives.<br>Le produit réel est déployé en production.
     </div>
   </nav>
 
@@ -295,10 +295,10 @@ a{color:var(--green-deep)}
     <section id="vue-boite">
       <div class="entete">
         <div class="titres">
-          <h1 id="titre-boite">Boite du jour</h1>
+          <h1 id="titre-boite">Boîte du jour</h1>
           <p class="sous" id="sous-boite"></p>
         </div>
-        <div class="bascule" role="group" aria-label="Comparer avant et apres">
+        <div class="bascule" role="group" aria-label="Comparer avant et après">
           <button type="button" id="bascule-sans" aria-pressed="false">Sans Bataxal</button>
           <button type="button" id="bascule-avec" aria-pressed="true">Avec Bataxal</button>
         </div>
@@ -308,7 +308,7 @@ a{color:var(--green-deep)}
       <div class="onglets" id="onglets" role="tablist" aria-label="Filtrer la boite"></div>
 
       <section class="prioritaires" id="prioritaires" aria-labelledby="titre-prio">
-        <h2 id="titre-prio">A traiter en premier</h2>
+        <h2 id="titre-prio">À traiter en premier</h2>
         <div class="grille-prio" id="grille-prio"></div>
       </section>
 
@@ -319,7 +319,7 @@ a{color:var(--green-deep)}
     <section id="vue-detail" hidden aria-labelledby="detail-sujet">
       <div class="entete">
         <div class="titres">
-          <button type="button" class="btn btn-secondaire" id="retour-boite">Retour a la boite</button>
+          <button type="button" class="btn btn-secondaire" id="retour-boite">Retour à la boîte</button>
         </div>
       </div>
       <article class="carte">
@@ -335,23 +335,23 @@ a{color:var(--green-deep)}
       <article class="carte">
         <h2>Ce que Bataxal en a compris</h2>
         <div class="encart" style="margin-top:10px">
-          <h3>Resume</h3>
+          <h3>Résumé</h3>
           <p id="detail-resume"></p>
         </div>
         <div class="fiche" id="detail-fiche"></div>
       </article>
 
       <article class="carte" id="carte-reponses">
-        <h2>Reponses proposees</h2>
+        <h2>Réponses proposées</h2>
         <p class="sous" style="color:var(--fg-muted);margin-top:4px">Choisissez un ton, le texte se remplit. Vous gardez la main jusqu'au dernier mot.</p>
         <div class="reponses" id="detail-reponses"></div>
         <div class="zone-envoi">
-          <label class="sr" for="zone-texte">Texte de la reponse</label>
-          <textarea id="zone-texte" placeholder="Choisissez une reponse proposee ou ecrivez la votre."></textarea>
+          <label class="sr" for="zone-texte">Texte de la réponse</label>
+          <textarea id="zone-texte" placeholder="Choisissez une réponse proposée ou écrivez la vôtre."></textarea>
           <div class="actions">
-            <button type="button" class="btn btn-primaire" id="btn-envoyer">Envoyer la reponse</button>
-            <button type="button" class="btn btn-whatsapp" id="btn-whatsapp">Transferer sur WhatsApp</button>
-            <button type="button" class="btn btn-secondaire" id="btn-assigner">Assigner a un collaborateur</button>
+            <button type="button" class="btn btn-primaire" id="btn-envoyer">Envoyer la réponse</button>
+            <button type="button" class="btn btn-whatsapp" id="btn-whatsapp">Transférer sur WhatsApp</button>
+            <button type="button" class="btn btn-secondaire" id="btn-assigner">Assigner à un collaborateur</button>
           </div>
           <div class="confirmation" id="confirmation" hidden></div>
         </div>
@@ -363,7 +363,7 @@ a{color:var(--green-deep)}
       <div class="entete">
         <div class="titres">
           <h1>Votre briefing de 8 h</h1>
-          <p class="sous">Chaque matin, avant d'ouvrir quoi que ce soit, vous recevez ceci sur WhatsApp. Le soir a 18 h, le meme message fait le point sur ce qui reste ouvert.</p>
+          <p class="sous">Chaque matin, avant d'ouvrir quoi que ce soit, vous recevez ceci sur WhatsApp. Le soir à 18 h, le même message fait le point sur ce qui reste ouvert.</p>
         </div>
       </div>
       <div class="briefing">
@@ -374,7 +374,7 @@ a{color:var(--green-deep)}
       </div>
       <div class="finir">
         <h2>Ce que ce message remplace</h2>
-        <p>Sans lui, il faut ouvrir la boite, lire vingt-quatre objets, en ouvrir la moitie pour comprendre, et esperer n'avoir rien manque. Le briefing dit en dix lignes ce qui compte, avant le premier cafe.</p>
+        <p>Sans lui, il faut ouvrir la boîte, lire vingt-quatre objets, en ouvrir la moitié pour comprendre, et espérer n'avoir rien manqué. Le briefing dit en dix lignes ce qui compte, avant le premier café.</p>
       </div>
     </section>
 
@@ -382,16 +382,16 @@ a{color:var(--green-deep)}
     <section id="vue-regles" hidden>
       <div class="entete">
         <div class="titres">
-          <h1>Vos regles de routage</h1>
-          <p class="sous">Ecrites en francais, sans une ligne de code. Elles tournent sur chaque email des son arrivee.</p>
+          <h1>Vos règles de routage</h1>
+          <p class="sous">Écrites en français, sans une ligne de code. Elles tournent sur chaque email dès son arrivée.</p>
         </div>
       </div>
       <div id="liste-regles"></div>
       <div class="finir">
         <h2>Pourquoi cela compte</h2>
-        <p>Un patron de PME ne veut pas trier, il veut que chaque email atterrisse chez la bonne personne sans passer par lui. Les regles font ce travail la nuit, le briefing du matin dit ce qui reste vraiment pour lui.</p>
+        <p>Un patron de PME ne veut pas trier, il veut que chaque email atterrisse chez la bonne personne sans passer par lui. Les règles font ce travail la nuit, le briefing du matin dit ce qui reste vraiment pour lui.</p>
         <div class="actions">
-          <a class="btn btn-primaire" id="lien-retour-2" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20demonstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20boite%20mail.">Voir ce que cela donne sur ma boite</a>
+          <a class="btn btn-primaire" id="lien-retour-2" href="https://wa.me/221784266546?text=Bonjour%2C%20j%27ai%20vu%20la%20d%C3%A9monstration%20de%20Bataxal%20et%20je%20voudrais%20l%27essayer%20sur%20ma%20bo%C3%AEte%20mail.">Voir ce que cela donne sur ma boîte</a>
           <a class="btn btn-secondaire" id="lien-offre-2" href="https://thibaudlepan77-svg.github.io/bataxal/">Voir les prix et les formules</a>
         </div>
       </div>
@@ -419,7 +419,7 @@ a{color:var(--green-deep)}
   function libelleImportance(n){ return (IMPORTANCES[n] || IMPORTANCES[3]).label; }
 
   var ACTIONS = {
-    REPONDRE:"Repondre", PAYER:"Payer", RAPPELER:"Rappeler", RIEN:"Rien a faire"
+    REPONDRE:"Répondre", PAYER:"Payer", RAPPELER:"Rappeler", RIEN:"Rien à faire"
   };
 
   var AVATARS = ["#8FA9C4","#C4A88F","#9CB79C","#C09BA8","#A79CC4","#C4BC8F","#8FBDC4","#B8A0B8"];
@@ -466,7 +466,7 @@ a{color:var(--green-deep)}
   /* --------- filtres, definis une seule fois et partages par les onglets et la liste --------- */
   var FILTRES = [
     { id:"tous", libelle:"Tous", test:function(){ return true; } },
-    { id:"atraiter", libelle:"A traiter", test:function(e){ return aTraiter(e); } },
+    { id:"atraiter", libelle:"À traiter", test:function(e){ return aTraiter(e); } },
     { id:"i1", libelle:"Urgent", test:function(e){ return e.importance === 1; } },
     { id:"i2", libelle:"Important", test:function(e){ return e.importance === 2; } },
     { id:"i3", libelle:"Normal", test:function(e){ return e.importance === 3; } },
@@ -521,15 +521,15 @@ a{color:var(--green-deep)}
     if (!etat.trie) {
       var c = el("div","chiffre");
       c.appendChild(Object.assign(el("div","val tabnum", String(emails.length)), {}));
-      c.appendChild(el("div","lib","emails recus, tous au meme niveau"));
+      c.appendChild(el("div","lib","emails reçus, tous au même niveau"));
       zone.appendChild(c);
       return;
     }
     var stats = [
       { val: compter(function(e){ return e.importance === 1; }), lib:"urgents, argent ou client en jeu", accent:true },
-      { val: compter(function(e){ return e.importance === 2; }), lib:"importants, une reponse est attendue" },
+      { val: compter(function(e){ return e.importance === 2; }), lib:"importants, une réponse est attendue" },
       { val: compter(function(e){ return e.action === "RIEN"; }), lib:"ne demandent rien de vous" },
-      { val: emails.length, lib:"emails recus depuis hier soir" }
+      { val: emails.length, lib:"emails reçus depuis hier soir" }
     ];
     stats.forEach(function(s){
       var c = el("div","chiffre" + (s.accent ? " accent" : ""));
@@ -592,13 +592,13 @@ a{color:var(--green-deep)}
       /* L'etat vide de la file "A traiter" n'est pas un manque, c'est la recompense :
          l'ecran se calme quand il n'y a plus rien pour vous (charte 5.4 et 5.7). */
       if (etat.filtre === "atraiter") {
-        v.appendChild(el("h2",null,"Votre matinee est faite"));
+        v.appendChild(el("h2",null,"Votre matinée est faite"));
         v.appendChild(el("p",null,"Plus rien n'attend une action de votre part. Les autres emails sont ranges et consultables quand vous le voulez."));
       } else {
-        v.appendChild(el("h2",null,"Rien dans cette categorie"));
-        v.appendChild(el("p",null,"Aucun email ne correspond a ce filtre ce matin. Revenez a l'onglet Tous pour voir la boite complete."));
+        v.appendChild(el("h2",null,"Rien dans cette catégorie"));
+        v.appendChild(el("p",null,"Aucun email ne correspond à ce filtre ce matin. Revenez à l'onglet Tous pour voir la boîte complète."));
       }
-      var b = el("button","btn btn-primaire","Revenir a tous les emails");
+      var b = el("button","btn btn-primaire","Revenir à tous les emails");
       b.type = "button";
       b.addEventListener("click", function(){ etat.filtre = "tous"; rendre(); });
       v.appendChild(b);
@@ -629,10 +629,10 @@ a{color:var(--green-deep)}
           bs.appendChild(badge("badge-" + e.importance, libelleImportance(e.importance)));
         }
         bs.appendChild(badge("badge-theme", e.categorie));
-        if (e.repondu) { bs.appendChild(badge("badge-repondu","Repondu")); }
-        else if (aTraiter(e)) { bs.appendChild(badge("badge-etat","A repondre")); }
+        if (e.repondu) { bs.appendChild(badge("badge-repondu","Répondu")); }
+        else if (aTraiter(e)) { bs.appendChild(badge("badge-etat","À répondre")); }
         if (e.piecesJointes > 0) {
-          bs.appendChild(badge("badge-pj", e.piecesJointes + (e.piecesJointes > 1 ? " pieces jointes" : " piece jointe")));
+          bs.appendChild(badge("badge-pj", e.piecesJointes + (e.piecesJointes > 1 ? " pièces jointes" : " pièce jointe")));
         }
         corps.appendChild(bs);
       }
@@ -646,13 +646,13 @@ a{color:var(--green-deep)}
     var sous = document.getElementById("sous-boite");
     var titre = document.getElementById("titre-boite");
     if (etat.trie) {
-      titre.textContent = "Boite du jour, triee";
-      sous.textContent = D.entreprise.jour + ". Sur " + emails.length + " emails recus, "
+      titre.textContent = "Boîte du jour, triée";
+      sous.textContent = D.entreprise.jour + ". Sur " + emails.length + " emails reçus, "
         + compter(aTraiter) + " attendent encore quelque chose de vous.";
     } else {
-      titre.textContent = "Boite du jour, telle qu'elle arrive";
+      titre.textContent = "Boîte du jour, telle qu'elle arrive";
       sous.textContent = D.entreprise.jour + ". " + emails.length
-        + " emails dans l'ordre d'arrivee, sans resume, sans importance, sans categorie. Comme aujourd'hui.";
+        + " emails dans l'ordre d'arrivée, sans résumé, sans importance, sans catégorie. Comme aujourd'hui.";
     }
     document.getElementById("bascule-sans").setAttribute("aria-pressed", String(!etat.trie));
     document.getElementById("bascule-avec").setAttribute("aria-pressed", String(etat.trie));
@@ -672,15 +672,15 @@ a{color:var(--green-deep)}
     /* Sur la page de detail, TOUS les niveaux portent un badge, y compris les calmes. */
     bs.appendChild(badge("badge-" + e.importance, libelleImportance(e.importance)));
     bs.appendChild(badge("badge-theme", e.categorie));
-    if (e.repondu) bs.appendChild(badge("badge-repondu","Repondu"));
+    if (e.repondu) bs.appendChild(badge("badge-repondu","Répondu"));
 
     var fiche = document.getElementById("detail-fiche");
     vider(fiche);
     var items = [
       ["Importance", libelleImportance(e.importance)],
-      ["Categorie", e.categorie],
+      ["Catégorie", e.categorie],
       ["Action attendue", ACTIONS[e.action]],
-      ["Echeance", e.deadline || "Aucune"]
+      ["Échéance", e.deadline || "Aucune"]
     ];
     items.forEach(function(it){
       var d = el("div","item");
@@ -712,8 +712,8 @@ a{color:var(--green-deep)}
     var conf = document.getElementById("confirmation");
     if (e.repondu) {
       conf.hidden = false;
-      conf.textContent = "Reponse envoyee a " + e.de + ". Cet email est sorti de votre liste a traiter"
-        + (e.assigne ? " et " + e.assigne + " a ete prevenu." : ".");
+      conf.textContent = "Réponse envoyée à " + e.de + ". Cet email est sorti de votre liste à traiter"
+        + (e.assigne ? " et " + e.assigne + " a été prévenu." : ".");
     } else if (!conf.dataset.libre) {
       conf.hidden = true;
       conf.textContent = "";
@@ -728,7 +728,7 @@ a{color:var(--green-deep)}
     var lignes = [];
     lignes.push("Bonjour " + D.entreprise.patron.split(" ")[0] + ", voici votre matin.");
     lignes.push("");
-    lignes.push(emails.length + " emails recus depuis hier soir. " + compter(aTraiter) + " attendent une action.");
+    lignes.push(emails.length + " emails reçus depuis hier soir. " + compter(aTraiter) + " attendent une action.");
     lignes.push("");
     lignes.push("URGENT (" + urgents.length + ")");
     urgents.forEach(function(e){
@@ -740,7 +740,7 @@ a{color:var(--green-deep)}
       lignes.push("- " + e.de + " : " + ACTIONS[e.action].toLowerCase() + (e.deadline ? ", " + e.deadline : ""));
     });
     lignes.push("");
-    lignes.push(calmes + " autres emails ne demandent rien, ils sont ranges et vous attendent si besoin.");
+    lignes.push(calmes + " autres emails ne demandent rien, ils sont rangés et vous attendent si besoin.");
     document.getElementById("texte-briefing").textContent = lignes.join("\n");
   }
 
@@ -757,17 +757,17 @@ a{color:var(--green-deep)}
       c.appendChild(document.createTextNode(r.alors + "."));
       d.appendChild(c);
       var n = r.touches.length;
-      d.appendChild(el("div","cond", "Ce matin, cette regle a traite " + n
-        + (n > 1 ? " emails sans vous deranger." : " email sans vous deranger.")));
+      d.appendChild(el("div","cond", "Ce matin, cette règle a traité " + n
+        + (n > 1 ? " emails sans vous déranger." : " email sans vous déranger.")));
       zone.appendChild(d);
     });
   }
 
   /* --------------------------- navigation --------------------------- */
   var VUES = [
-    { id:"boite", libelle:"Boite triee", section:"vue-boite" },
+    { id:"boite", libelle:"Boîte triée", section:"vue-boite" },
     { id:"briefing", libelle:"Briefing 8 h", section:"vue-briefing" },
-    { id:"regles", libelle:"Regles", section:"vue-regles" },
+    { id:"regles", libelle:"Règles", section:"vue-regles" },
     { id:"detail", libelle:null, section:"vue-detail" }
   ];
 
@@ -846,7 +846,7 @@ a{color:var(--green-deep)}
     if (texte.length === 0) {
       conf.hidden = false;
       conf.dataset.libre = "1";
-      conf.textContent = "Choisissez une reponse proposee ou ecrivez la votre avant d'envoyer.";
+      conf.textContent = "Choisissez une réponse proposée ou écrivez la vôtre avant d'envoyer.";
       return;
     }
     delete conf.dataset.libre;
@@ -860,8 +860,8 @@ a{color:var(--green-deep)}
     var conf = document.getElementById("confirmation");
     conf.hidden = false;
     conf.dataset.libre = "1";
-    conf.textContent = "Dans la version reelle, cet email part sur le WhatsApp de la personne concernee, "
-      + "resume et pieces jointes comprises. Ici, rien n'est envoye, c'est une demonstration.";
+    conf.textContent = "Dans la version réelle, cet email part sur le WhatsApp de la personne concernée, "
+      + "résumé et pièces jointes comprises. Ici, rien n'est envoyé, c'est une démonstration.";
   });
 
   document.getElementById("btn-assigner").addEventListener("click", function(){
@@ -881,8 +881,8 @@ a{color:var(--green-deep)}
     var conf = document.getElementById("confirmation");
     conf.hidden = false;
     conf.dataset.libre = "1";
-    conf.textContent = "Assigne a " + qui.nom + ", " + qui.role.toLowerCase()
-      + ". Elle ou il recoit l'email, le resume et l'echeance, et vous voyez ou en est le dossier.";
+    conf.textContent = "Assigné à " + qui.nom + ", " + qui.role.toLowerCase()
+      + ". Elle ou il reçoit l'email, le résumé et l'échéance, et vous voyez où en est le dossier.";
     rendreMenus();
   });
 

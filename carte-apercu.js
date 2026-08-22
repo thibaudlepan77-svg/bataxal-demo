@@ -58,14 +58,14 @@ function gabarit(c) {
   .bas b{color:#F7F5F0;font-weight:600}
   </style>
   <div class="haut"><div class="logo">B</div><div class="marque">Bataxa<span>l</span></div></div>
-  <h1>Votre boite mail, <em>triee</em>.<br>Ce qui compte en premier, le reste plus tard.</h1>
+  <h1>Votre boîte mail, <em>triée</em>.<br>Ce qui compte en premier, le reste plus tard.</h1>
   <div class="chiffres">
     <div class="c c1"><div class="n">${c.urgents}</div><div class="l">urgents, argent ou client en jeu</div></div>
-    <div class="c c2"><div class="n">${c.importants}</div><div class="l">importants, une reponse est attendue</div></div>
+    <div class="c c2"><div class="n">${c.importants}</div><div class="l">importants, une réponse est attendue</div></div>
     <div class="c c3"><div class="n">${c.calmes}</div><div class="l">ne demandent rien de vous</div></div>
-    <div class="c c4"><div class="n">${c.total}</div><div class="l">emails recus depuis hier soir</div></div>
+    <div class="c c4"><div class="n">${c.total}</div><div class="l">emails reçus depuis hier soir</div></div>
   </div>
-  <div class="bas"><div>Demonstration <b>sans compte</b>, donnees fictives</div><div>Jaayleer, Dakar</div></div>
+  <div class="bas"><div>Démonstration <b>sans compte</b>, données fictives</div><div>Jaayleer, Dakar</div></div>
   </html>`;
 }
 
